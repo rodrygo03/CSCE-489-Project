@@ -1,0 +1,194 @@
+\documentclass[12pt]{article}
+
+% Packages
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{cite}
+
+\usepackage{parskip} % disables paragraph indentation, adds vertical spacing instead
+
+% Title formatting
+\titleformat{\section}
+  {\normalfont\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}
+  {\normalfont\large\bfseries}{\thesubsection}{1em}{}
+
+% Hyperref setup
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+    citecolor=blue
+}
+
+\title{\textbf{Hybrid N-gram and Neural Language Model for Genomic Sequences} \\
+\large Texas A\&M $-$ CSCE 489: NLP}
+\author{Rodrigo Orozco, Jesse Zheng}
+\date{October 14, 2025}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction and Motivation}
+\label{sec:introduction}
+
+% Example structure:
+% - What is the problem?
+% - Why is it important?
+% - What gap does your project fill?
+% - What are the potential applications or impact?
+
+In a recent work, Liu et al.~\cite{liu2024infinigram} demonstrated that hybrid models
+combining traditional n-gram statistics with neural language models can improve performance on language modeling tasks.
+Specifically, interpolating unbounded n-gram models with large language models yields better perplexity and downstream task performance than either
+approach alone. This suggests that n-gram statistics capture complementary information that neural models benefit from.
+
+We hypothesize that this hybrid approach can also be effective for modeling genomic sequences. To test this, we propose combining n-gram statistics 
+similar to Liu et al., with the Nucleotide Transformer~\cite{dalla2024nucleotide} and evaluate the perplexity and effectiveness in promoter 
+classification. 
+
+This hybrid approach may be particularly effective for genomic sequences because:
+\begin{itemize}
+    \item DNA contains highly repetitive regions where n-gram statistics are informative.
+    \item Known regulatory motifs (TATA box, CAAT box, etc.) are short, fixed patterns that n-grams naturally model.
+    \item The combination may provide better interpretability by revealing when n-gram patterns dominate vs. when long-range context is needed.
+\end{itemize}
+
+\section{Dataset}
+\label{sec:dataset}
+
+\subsection{Datasets Used}
+\label{subsec:data}
+
+% TODO: Describe your dataset(s)
+% [Provide concrete information about the dataset(s) you plan to use. If using existing datasets, cite them properly. If curating your own dataset, describe the collection procedure in detail.]
+
+We will use one primary genome dataset for building an n-gram index and evaluating perplexity for the Nucleotide Transformer and the hybrid model, and a second dataset to add task specific labels for 
+an extrinsic evaluation of the two.
+
+GRCh38 human reference genome, the most current assembly of the human genome, will be used as our primary dataset. It includes a genome size of 
+3.1 Gb and 24 total chromosomes. The genome will be partitioned by chromosome to create distinct training, validation, and test sets:
+
+\begin{itemize}
+    \item Training set: Chromosomes 2-22
+    \item Validation set: Chromosome 1 
+    \item Test set: Chromosomes X and Y 
+\end{itemize}
+
+This single genome serves multiple purposes building the n-gram suffix array index from chr2-22, evaluating language modeling performance 
+(perplexity) on held-out chromosomes (chr1, chrX, chrY), and providing the source sequences for promoter classification task.
+
+For evaluating whether our hybrid model helps with real biological tasks, we need labels for promoters and nonpromoters. We will use Eukaryotic
+Promoter Database (EPDnew), a curated collection of approximately 30,000 experimentally validated human promoters. This provides us
+genomic coordinates (chromosome, position) marking experimentally confirmed promoter locations. Additionally, the coordinates are in GRCh38 
+reference system so they align with our language model training data.
+
+\subsection{Labeled Dataset}
+\label{subsec:labeleddata}
+
+EPDnew will act as an annotation layer over GRCh38 telling us where promoters are located. We will extract the actual DNA sequences from GRCh38 at 
+those coordinates with a window size of 500 base pairs. This window captures core and proximal promoter elements.
+
+Postive Examples:
+\begin{itemize}
+    \item extract ±250 base pairs around each EPDnew transcription start site from GRCh38
+    \item these sequences contain characteristic promoter features: regulatory motifs (TATA box, CAAT box), elevated GC content, and nucleosome positioning signals
+\end{itemize}
+
+Negative Examples:
+\begin{itemize}
+    \item Sample 500 base pairs sequences from intergenic regions (between genes, no regulatory function)
+    \item GC-content matching: For each promoter, select a non-promoter with similar GC percentage (within 5 percent)
+    \item This prevents models from learning simple composition biases and ensures they must learn promoter-specific patterns (motif organization, positioning)
+\end{itemize}
+
+
+\section{Proposed Approach}
+\label{sec:approach}
+
+Our approach follows Liu et al. adapted for genomic sequences, combining statistical n-gram patterns with neural context understanding.
+
+\subsection{N-gram Index Construction}
+\label{subsec:ngram}
+We will build an unbounded n-gram index on the training chromosomes using the infini-gram codebase~\cite{liu2024infinigram}. 
+This process involves:
+\begin{itemize}
+    \item extracting and tokenizing training sequences using Nuclotide Transformer's tokenization scheme
+    \item constructing a suffix array that stores all n-gram frequencies
+    \item applying backoff and smoothing to handle unseen patterns
+\end{itemize}
+
+\textbf{Fallback plan:} If infini-gram integration proves incompatible with DNA tokenization, we will use KenLM to build a fixed-order n-gram model 5-gram with smoothing.
+
+\subsection{Neural Language Model}
+\label{subsec:neural}
+We will use the pre-trained \textbf{Nucleotide Transformer (NT-500M-human-ref)} from InstaDeep~\cite{dalla2024nucleotide} as our neural component. 
+The model is a 500M parameter autoregressive transformer trained on human genome sequences. We selected NT because its autoregressive architecture naturally 
+aligns with n-gram interpolation, NT will be used frozen without any fine-tuning. Note that a fine-tuned NT on promoter vs nonpromoters classification could be explored as an extension, if time permits.
+
+\subsection{Hybrid Interpolation}
+\label{subsec:hybrid}
+We combine n-gram and neural probabilities via linear interpolation:
+\begin{center}
+    $P_{\text{hybrid}}(y \mid x) = \lambda \cdot P_{\text{ngram}}(y \mid x) + (1 - \lambda) \cdot P_{\text{NT}}(y \mid x)$ \\
+    where $\lambda \in [0,1]$ is the interpolation weight.
+\end{center}
+
+We will tune $\lambda$ on the validation set via grid search over ${0.0,0.1,0.2,\dots,1.0}$, selecting the value that minimizes perplexity. 
+This fixed $\lambda$ will be used for all test sequences.
+
+
+\section{Evaluation Plan}
+\label{sec:evaluation}
+
+\subsection{Intrinsic Evaluation: Language Modeling Metrics}
+\label{subsec:intrinsic}
+
+Perplexity will be used on the validation set to tune the hyperparameter in the hybrid model. Additionally, perplexity will be used to evaluate
+performance of the n-gram model, Nucleotide Transformer, and hybrid model on the held-out chromosomes, the test set. Perplexity measures model uncertainty, 
+with lower values indicating better prediction of genomic sequences
+
+% \begin{center}
+%     \item Perplexity: $\exp{-\frac{1}{N} \sum_{i=1}^{N} \log Q(w_i)}$ 
+% \end{center}
+
+\subsection{Extrinsic Evaluation: Promoter Classification}
+\label{subsec:extrinsic}
+
+To evaluate the language models on classifying promoter vs. non-promoter 
+sequences we will use the model's negative log-likelihood (NLL) as a 
+classification score under the assumption that promoters, having 
+characteristic regulatory patterns, should be more "expected" by a good 
+language model, lower NLL. Then the following methodology will be used:
+% \begin{center}
+%     \text{Cross-Entropy}: $-\frac{1}{N}\sum_{i=1}^{N} \log P(\text{token}_i \mid \text{previous tokens})$
+% \end{center}
+\begin{itemize}
+    \item For each test sequence compute NLL under each model
+    \item Invert NLL to create classification scores: lower NLL → higher score → predict promoter
+    \item Use final scores to rank sequences
+\end{itemize}
+
+To determine the threshold for the classification score we will use the validation set and maximize it's F1 score.
+We can then determine accuracy, precision, recall, and F1 score on the test set using the same threshold to evaluate classification performance.
+
+% \begin{center}
+%     \item Accuracy: $\frac{TP + TN}{TP + TN + FP + FN}$
+%     \item Precision: $\frac{TP}{TP + FP}$
+%     \item Recall: $\frac{TP}{TP + FN}$
+%     \item F1 Score: $2 \cdot \frac{\text{Precision} \cdot \text{Recall}}{\text{Precision} + \text{Recall}}$
+% \end{center}
+
+
+% Bibliography
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}

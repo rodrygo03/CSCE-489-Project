@@ -1,0 +1,3 @@
+reports/*
+!reports/proposal.pdf
+!reports/proposal.tex
