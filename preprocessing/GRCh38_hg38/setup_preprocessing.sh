@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# setup script so data is downloaded into /scratch/user/...
+
 # download data into 
 mkdir -p "artifacts"
 
