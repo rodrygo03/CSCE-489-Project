@@ -1,3 +1,7 @@
 reports/*
 !reports/proposal.pdf
 !reports/proposal.tex
+
+preprocessing/GRCh38_hg38/artifacts/*
+preprocessing/GRCh38_hg38/venv/*
+
