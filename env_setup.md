@@ -1,43 +1,111 @@
-Environment Setup & Job Instructions
-1. Load Dependencies for Job
+# **Environment Setup & Job Instructions**
+
+## **1. Load Dependencies for the Job**
+
+```bash
 module purge
 module load GCC/12.3.0 OpenMPI/4.1.5
 module load PyTorch/2.1.2-CUDA-12.1.1
-Save the loaded modules as a module set named deps:
+```
+
+Save the loaded modules as a module set named **`deps`**:
+
+```bash
 module save deps
-2. Create and Configure Python Virtual Environment
+```
+
+---
+
+## **2. Create and Configure the Python Virtual Environment**
+
+```bash
 python -m venv venv
 source venv/bin/activate
+
 pip install -U pip
 pip install datasets
 pip install --upgrade "transformers==4.38.0"
-3. Notes for Development & Job Submission
-When using heavy Python imports (e.g., transformers, torch), create a .slurm job script.
-For reference, see:
+```
+
+---
+
+## **3. Development & Job Submission Notes**
+
+When using **heavy Python imports** (e.g., `transformers`, `torch`), use a **SLURM job script** instead of running interactively.
+
+Reference script:
+
+```
 /preprocessing/GRCh38_h38/preprocessing.slurm
-A typical .slurm script follows this structure:
-# Resource allocation directives (--time, --cpus-per-task, --mem, etc.)
+```
 
-module restore deps    # restores saved module environment
+### **Typical SLURM Script Structure**
 
-# Optional: activate venv and install additional dependencies
+```bash
+#!/bin/bash
+#SBATCH --time=HH:MM:SS
+#SBATCH --cpus-per-task=1
+#SBATCH --mem=XXG
+#SBATCH --output=Output.%j
+
+module restore deps   # restore saved module environment
+
+# Optional: activate your virtual environment
 # source venv/bin/activate
 # pip install <extra-packages>
 
-# Execute your Python script
+# Run your Python program
 python file.py
-4. Output Behavior
-SLURM creates an output file named:
-<--output>.%j
-Where %j is the JobID.
-This file contains the stdout of the job.
-5. Installing Additional Packages
-To install more packages manually:
+```
+
+---
+
+## **4. Output Behavior**
+
+SLURM generates an output file defined by:
+
+```
+--output=<filename>.%j
+```
+
+Where:
+
+* **`%j`** = Job ID
+* File contains **stdout** (and stderr unless redirected otherwise)
+
+Example:
+
+```
+JobOutput.1234567
+```
+
+---
+
+## **5. Installing Additional Packages**
+
+To manually install more packages into your virtual environment:
+
+```bash
 source venv/bin/activate
 pip install <package>
 deactivate
-Alternatively, include pip install commands directly inside your .slurm script.
-Reminder:
-If your job uses virtual-environment packages, include:
+```
+
+Alternatively, you can install packages **inside your SLURM script** using:
+
+```bash
 source venv/bin/activate
-inside your .slurm script.
+pip install <package>
+```
+
+### **Reminder**
+
+If your job relies on virtual environment packages, include:
+
+```bash
+source venv/bin/activate
+```
+
+inside the SLURM job script **before** executing Python.
+
+
