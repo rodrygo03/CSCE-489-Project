@@ -72,20 +72,21 @@ def mask_human_reference_genome():
     """
     print("Loading data...")
     data_path = "artifacts/datasets/human_reference_genome/6kbp/0.0.0/1dda7e5c35a9246c397dab1c8343852df92847b32619e1a72261d5cee3b2f919"
-    train_data = os.path.join(data_path, "human_reference_genome-train.arrow")
-    val_data   = os.path.join(data_path, "human_reference_genome-validation.arrow")
-    test_data  = os.path.join(data_path, "human_reference_genome-test.arrow")
 
-    train_ds = Dataset.from_file(train_data)
-    val_ds   = Dataset.from_file(val_data)
-    test_ds  = Dataset.from_file(test_data)
+    splits = {
+        'train': os.path.join(data_path, "human_reference_genome-train.arrow"),
+        'val':   os.path.join(data_path, "human_reference_genome-validation.arrow"),
+        'test':  os.path.join(data_path, "human_reference_genome-test.arrow")
+    }
+    datasets = {}
 
-    # use all data since we are evaluating a fixed, pre-trained model on ability to 
-    # reconstruct masked nucleotides -> model characterization
-    data = concatenate_datasets([train_ds, val_ds, test_ds])
+    for split_name, split_path in splits.items():
+        datasets[split_name] = Dataset.from_file(split_path)
+        print(f"  Loaded {split_name}: {len(datasets[split_name])} sequences")
+
     print("Data loaded.")
-
     print("Loading tokenizer...")
+
     # be sure to download tokenizer using download_nt.sh in /nucleotide-transformer 
     model_path = "../../nucleotide-transformer/artifacts/nucleotide-transformer-500m-human-ref/"
     tokenizer = AutoTokenizer.from_pretrained(model_path, local_files_only=True)
@@ -93,40 +94,40 @@ def mask_human_reference_genome():
     print("Tokenizer loaded.")
 
     chunk_size = 50000
-    total_examples = len(data)
     print("Masking human reference genome...")
     for scheme_name, mask_func in [("central", mask_central_token), ("random", mask_random_tokens)]:
         print(f"\nMasking {scheme_name} token(s)...")
-        all_chunks = []
-        
-        for start_idx in tqdm(range(0, total_examples, chunk_size), desc=f"Masking chunks"):
-            end_idx = min(start_idx + chunk_size, total_examples)
-            chunk_data = []
-            
-            for i in range(start_idx, end_idx):
-                seq = data[i]["sequence"]
-                tokens = tokenize_6kb_batch(seq, tokenizer)
-                masked_seq, positions_masked = mask_func(tokens, mask_id)
-                
-                chunk_data.append({
-                    "original_tokens": tokens,
-                    "masked_tokens": masked_seq,
-                    "positions_masked": positions_masked
-                }) # Each entry will be a dict with keys: original_tokens, masked_tokens, positions_masked
-            
-            chunk_ds = Dataset.from_list(chunk_data)
-            all_chunks.append(chunk_ds)
-            
-            del chunk_data # Clear memory
-        
-        print(f"Concatenating {scheme_name} chunks...")
-        final_ds = concatenate_datasets(all_chunks)
-        
-        output_path = f"artifacts/datasets/human_reference_genome/6kbp/masked/masked_{scheme_name}_scheme_ds"
-        print(f"Saving {scheme_name} scheme to {output_path}...")
-        final_ds.save_to_disk(output_path)
-        
-        del all_chunks, final_ds
+
+        for split_name, data in datasets.items():
+            total_examples = len(data)
+            all_chunks = []
+
+            for start_idx in tqdm(range(0, total_examples, chunk_size), desc=f"Masking chunks"):
+                end_idx = min(start_idx + chunk_size, total_examples)
+                chunk_data = []
+
+                for i in range(start_idx, end_idx):
+                    seq = data[i]["sequence"]
+                    tokens = tokenize_6kb_batch(seq, tokenizer)
+                    masked_seq, positions_masked = mask_func(tokens, mask_id)
+
+                    chunk_data.append({
+                        "original_tokens": tokens,
+                        "masked_tokens": masked_seq,
+                        "positions_masked": positions_masked
+                    }) # Each entry will be a dict with keys: original_tokens, masked_tokens, positions_masked
+
+                chunk_ds = Dataset.from_list(chunk_data)
+                all_chunks.append(chunk_ds)
+                del chunk_data # Clear memory
+
+            print(f"Concatenating {split_name}, {scheme_name} chunks...")
+            final_ds = concatenate_datasets(all_chunks)
+            output_path = f"artifacts/datasets/human_reference_genome/6kbp/masked/masked_{split_name}_{scheme_name}_ds"
+            print(f"Saving to {output_path}...")
+
+            final_ds.save_to_disk(output_path)
+            del all_chunks, final_ds
 
     print("Done.")
 
