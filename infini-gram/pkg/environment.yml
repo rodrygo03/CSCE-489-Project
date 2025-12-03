@@ -1,0 +1,15 @@
+name: infini-gram-pkg
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.12.9
+  - pip:
+    - pybind11
+    - cibuildwheel
+    - twine
+    - zstandard
+    - tqdm
+    - transformers
+  - numpy
+  - gxx

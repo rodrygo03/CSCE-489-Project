@@ -1,0 +1,6 @@
+/.vscode/
+/data
+/index
+**/__pycache__/
+
+artifacts/
