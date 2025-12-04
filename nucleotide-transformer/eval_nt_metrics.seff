@@ -1,0 +1,11 @@
+Job ID: 17214148
+Cluster: grace
+User/Group: rodrigoorozco03/rodrigoorozco03
+State: COMPLETED (exit code 0)
+Nodes: 1
+Cores per node: 4
+CPU Utilized: 00:25:34
+CPU Efficiency: 19.83% of 02:08:56 core-walltime
+Job Wall-clock time: 00:32:14
+Memory Utilized: 1010.64 MB
+Memory Efficiency: 4.11% of 24.00 GB (24.00 GB/node)
