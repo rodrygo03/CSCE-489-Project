@@ -1,0 +1,164 @@
+Restoring modules from user's deps
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /InstaDeepAI/nucleotide-transformer-500m-human-ref/resolve/main/tokenizer_config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x150824eac9d0>: Failed to establish a new connection: [Errno 101] Network is unreachable'))"), '(Request ID: 93ed7cae-ea7f-4fee-85f0-79124c9f6144)')' thrown while requesting HEAD https://huggingface.co/InstaDeepAI/nucleotide-transformer-500m-human-ref/resolve/main/tokenizer_config.json
+Retrying in 1s [Retry 1/5].
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /InstaDeepAI/nucleotide-transformer-500m-human-ref/resolve/main/tokenizer_config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x15081d0b37d0>: Failed to establish a new connection: [Errno 101] Network is unreachable'))"), '(Request ID: f3ed6b36-dd78-4bb2-8f64-7fe3fb9927d5)')' thrown while requesting HEAD https://huggingface.co/InstaDeepAI/nucleotide-transformer-500m-human-ref/resolve/main/tokenizer_config.json
+Retrying in 2s [Retry 2/5].
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /InstaDeepAI/nucleotide-transformer-500m-human-ref/resolve/main/tokenizer_config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x15081de32110>: Failed to establish a new connection: [Errno 101] Network is unreachable'))"), '(Request ID: 03480fae-9136-46e1-ae77-5cdff30712ab)')' thrown while requesting HEAD https://huggingface.co/InstaDeepAI/nucleotide-transformer-500m-human-ref/resolve/main/tokenizer_config.json
+Retrying in 4s [Retry 3/5].
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /InstaDeepAI/nucleotide-transformer-500m-human-ref/resolve/main/tokenizer_config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x15081d6fa410>: Failed to establish a new connection: [Errno 101] Network is unreachable'))"), '(Request ID: f9acc784-fb35-4cf0-978c-aa2afabf2c89)')' thrown while requesting HEAD https://huggingface.co/InstaDeepAI/nucleotide-transformer-500m-human-ref/resolve/main/tokenizer_config.json
+Retrying in 8s [Retry 4/5].
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /InstaDeepAI/nucleotide-transformer-500m-human-ref/resolve/main/tokenizer_config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x15081168ce10>: Failed to establish a new connection: [Errno 101] Network is unreachable'))"), '(Request ID: 0c4a0a9e-4c86-41b0-a62d-0bfe28f61624)')' thrown while requesting HEAD https://huggingface.co/InstaDeepAI/nucleotide-transformer-500m-human-ref/resolve/main/tokenizer_config.json
+Retrying in 8s [Retry 5/5].
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /InstaDeepAI/nucleotide-transformer-500m-human-ref/resolve/main/tokenizer_config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x15081168dd50>: Failed to establish a new connection: [Errno 101] Network is unreachable'))"), '(Request ID: d91c0483-783d-4c7b-ac62-3f4f3f162eb5)')' thrown while requesting HEAD https://huggingface.co/InstaDeepAI/nucleotide-transformer-500m-human-ref/resolve/main/tokenizer_config.json
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /InstaDeepAI/nucleotide-transformer-500m-human-ref/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x15081169c8d0>: Failed to establish a new connection: [Errno 101] Network is unreachable'))"), '(Request ID: cd81f653-328e-4cb6-b8a2-572dd90b1f30)')' thrown while requesting HEAD https://huggingface.co/InstaDeepAI/nucleotide-transformer-500m-human-ref/resolve/main/config.json
+Retrying in 1s [Retry 1/5].
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /InstaDeepAI/nucleotide-transformer-500m-human-ref/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x15081169d810>: Failed to establish a new connection: [Errno 101] Network is unreachable'))"), '(Request ID: beee7469-334b-4d8a-a958-b2f8d271bc4d)')' thrown while requesting HEAD https://huggingface.co/InstaDeepAI/nucleotide-transformer-500m-human-ref/resolve/main/config.json
+Retrying in 2s [Retry 2/5].
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /InstaDeepAI/nucleotide-transformer-500m-human-ref/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x15081169e750>: Failed to establish a new connection: [Errno 101] Network is unreachable'))"), '(Request ID: 92893a0a-e67e-49ae-a6ab-19b7c431661e)')' thrown while requesting HEAD https://huggingface.co/InstaDeepAI/nucleotide-transformer-500m-human-ref/resolve/main/config.json
+Retrying in 4s [Retry 3/5].
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /InstaDeepAI/nucleotide-transformer-500m-human-ref/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x15081169f690>: Failed to establish a new connection: [Errno 101] Network is unreachable'))"), '(Request ID: c726c0a0-c534-4181-b930-e42c72f0f7f5)')' thrown while requesting HEAD https://huggingface.co/InstaDeepAI/nucleotide-transformer-500m-human-ref/resolve/main/config.json
+Retrying in 8s [Retry 4/5].
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /InstaDeepAI/nucleotide-transformer-500m-human-ref/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x1508116a0650>: Failed to establish a new connection: [Errno 101] Network is unreachable'))"), '(Request ID: 8e239831-650d-403f-92e9-cffce33cba6f)')' thrown while requesting HEAD https://huggingface.co/InstaDeepAI/nucleotide-transformer-500m-human-ref/resolve/main/config.json
+Retrying in 8s [Retry 5/5].
+'(MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /InstaDeepAI/nucleotide-transformer-500m-human-ref/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x1508116a1590>: Failed to establish a new connection: [Errno 101] Network is unreachable'))"), '(Request ID: 61b89290-ca98-4615-9192-6a2292c1ad55)')' thrown while requesting HEAD https://huggingface.co/InstaDeepAI/nucleotide-transformer-500m-human-ref/resolve/main/config.json
+======================================================================
+IA3 Fine-tuning for Promoter Classification
+======================================================================
+Device: cuda
+Model: InstaDeepAI/nucleotide-transformer-500m-human-ref
+Output: results/promoter_ia3
+Cross-validation folds: 10
+Steps per fold: 10000
+
+Loading data...
+Loaded 57698 sequences from ../data/nt_promoter_dataset.tsv
+  Positives: 28849 (50.0%)
+  Negatives: 28849 (50.0%)
+
+Dataset splits:
+  Train: 46158 (80.0%)
+    Positives: 23079 (50.0%)
+  Val:   0 (skipped for cross-validation)
+  Test:  11540 (20.0%)
+    Positives: 5770 (50.0%)
+Traceback (most recent call last):
+  File "/sw/eb/sw/poetry/1.5.1-GCCcore-12.3.0/lib/python3.11/site-packages/urllib3/connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/sw/eb/sw/poetry/1.5.1-GCCcore-12.3.0/lib/python3.11/site-packages/urllib3/util/connection.py", line 95, in create_connection
+    raise err
+  File "/sw/eb/sw/poetry/1.5.1-GCCcore-12.3.0/lib/python3.11/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    sock.connect(sa)
+OSError: [Errno 101] Network is unreachable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/sw/eb/sw/poetry/1.5.1-GCCcore-12.3.0/lib/python3.11/site-packages/urllib3/connectionpool.py", line 714, in urlopen
+    httplib_response = self._make_request(
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/sw/eb/sw/poetry/1.5.1-GCCcore-12.3.0/lib/python3.11/site-packages/urllib3/connectionpool.py", line 403, in _make_request
+    self._validate_conn(conn)
+  File "/sw/eb/sw/poetry/1.5.1-GCCcore-12.3.0/lib/python3.11/site-packages/urllib3/connectionpool.py", line 1053, in _validate_conn
+    conn.connect()
+  File "/sw/eb/sw/poetry/1.5.1-GCCcore-12.3.0/lib/python3.11/site-packages/urllib3/connection.py", line 363, in connect
+    self.sock = conn = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "/sw/eb/sw/poetry/1.5.1-GCCcore-12.3.0/lib/python3.11/site-packages/urllib3/connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x1508116a1590>: Failed to establish a new connection: [Errno 101] Network is unreachable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/sw/eb/sw/poetry/1.5.1-GCCcore-12.3.0/lib/python3.11/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/sw/eb/sw/poetry/1.5.1-GCCcore-12.3.0/lib/python3.11/site-packages/urllib3/connectionpool.py", line 798, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/sw/eb/sw/poetry/1.5.1-GCCcore-12.3.0/lib/python3.11/site-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /InstaDeepAI/nucleotide-transformer-500m-human-ref/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x1508116a1590>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/scratch/user/yojoe56/CSCE-489-Project/venv/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 1543, in _get_metadata_or_catch_error
+    metadata = get_hf_file_metadata(
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/user/yojoe56/CSCE-489-Project/venv/lib/python3.11/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/scratch/user/yojoe56/CSCE-489-Project/venv/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 1460, in get_hf_file_metadata
+    r = _request_wrapper(
+        ^^^^^^^^^^^^^^^^^
+  File "/scratch/user/yojoe56/CSCE-489-Project/venv/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 283, in _request_wrapper
+    response = _request_wrapper(
+               ^^^^^^^^^^^^^^^^^
+  File "/scratch/user/yojoe56/CSCE-489-Project/venv/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 306, in _request_wrapper
+    response = http_backoff(method=method, url=url, **params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/user/yojoe56/CSCE-489-Project/venv/lib/python3.11/site-packages/huggingface_hub/utils/_http.py", line 325, in http_backoff
+    raise err
+  File "/scratch/user/yojoe56/CSCE-489-Project/venv/lib/python3.11/site-packages/huggingface_hub/utils/_http.py", line 306, in http_backoff
+    response = session.request(method=method, url=url, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/sw/eb/sw/poetry/1.5.1-GCCcore-12.3.0/lib/python3.11/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/sw/eb/sw/poetry/1.5.1-GCCcore-12.3.0/lib/python3.11/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/user/yojoe56/CSCE-489-Project/venv/lib/python3.11/site-packages/huggingface_hub/utils/_http.py", line 95, in send
+    return super().send(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/sw/eb/sw/poetry/1.5.1-GCCcore-12.3.0/lib/python3.11/site-packages/requests/adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: (MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /InstaDeepAI/nucleotide-transformer-500m-human-ref/resolve/main/config.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x1508116a1590>: Failed to establish a new connection: [Errno 101] Network is unreachable'))"), '(Request ID: 61b89290-ca98-4615-9192-6a2292c1ad55)')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/scratch/user/yojoe56/CSCE-489-Project/venv/lib/python3.11/site-packages/transformers/utils/hub.py", line 398, in cached_file
+    resolved_file = hf_hub_download(
+                    ^^^^^^^^^^^^^^^^
+  File "/scratch/user/yojoe56/CSCE-489-Project/venv/lib/python3.11/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/scratch/user/yojoe56/CSCE-489-Project/venv/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 1007, in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/user/yojoe56/CSCE-489-Project/venv/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 1114, in _hf_hub_download_to_cache_dir
+    _raise_on_head_call_error(head_call_error, force_download, local_files_only)
+  File "/scratch/user/yojoe56/CSCE-489-Project/venv/lib/python3.11/site-packages/huggingface_hub/file_download.py", line 1658, in _raise_on_head_call_error
+    raise LocalEntryNotFoundError(
+huggingface_hub.errors.LocalEntryNotFoundError: An error happened while trying to locate the file on the Hub and we cannot find the requested files in the local cache. Please check your connection and try again or make sure your Internet connection is on.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/scratch/user/yojoe56/CSCE-489-Project/nucleotide-transformer/fine_tune/code/fine_tune_deepromoter.py", line 479, in <module>
+    main()
+  File "/scratch/user/yojoe56/CSCE-489-Project/nucleotide-transformer/fine_tune/code/fine_tune_deepromoter.py", line 393, in main
+    full_dataset = PromoterDataset(
+                   ^^^^^^^^^^^^^^^^
+  File "/scratch/user/yojoe56/CSCE-489-Project/nucleotide-transformer/fine_tune/code/pytorch_deePromoter.py", line 43, in __init__
+    self.tokenizer = AutoTokenizer.from_pretrained(tokenizer_name)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/user/yojoe56/CSCE-489-Project/venv/lib/python3.11/site-packages/transformers/models/auto/tokenization_auto.py", line 782, in from_pretrained
+    config = AutoConfig.from_pretrained(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/user/yojoe56/CSCE-489-Project/venv/lib/python3.11/site-packages/transformers/models/auto/configuration_auto.py", line 1111, in from_pretrained
+    config_dict, unused_kwargs = PretrainedConfig.get_config_dict(pretrained_model_name_or_path, **kwargs)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/user/yojoe56/CSCE-489-Project/venv/lib/python3.11/site-packages/transformers/configuration_utils.py", line 633, in get_config_dict
+    config_dict, kwargs = cls._get_config_dict(pretrained_model_name_or_path, **kwargs)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/user/yojoe56/CSCE-489-Project/venv/lib/python3.11/site-packages/transformers/configuration_utils.py", line 688, in _get_config_dict
+    resolved_config_file = cached_file(
+                           ^^^^^^^^^^^^
+  File "/scratch/user/yojoe56/CSCE-489-Project/venv/lib/python3.11/site-packages/transformers/utils/hub.py", line 441, in cached_file
+    raise EnvironmentError(
+OSError: We couldn't connect to 'https://huggingface.co' to load this file, couldn't find it in the cached files and it looks like InstaDeepAI/nucleotide-transformer-500m-human-ref is not the path to a directory containing a file named config.json.
+Checkout your internet connection or see how to run the library in offline mode at 'https://huggingface.co/docs/transformers/installation#offline-mode'.

@@ -1,0 +1,32 @@
+Restoring modules from user's deps
+======================================================================
+IA3 Fine-tuning for Promoter Classification
+======================================================================
+Device: cuda
+Model: /scratch/user/yojoe56/CSCE-489-Project/nucleotide-transformer/artifacts/nucleotide-transformer-500m-human-ref
+Output: results/promoter_ia3_debug
+Cross-validation folds: 1
+Steps per fold: 50
+
+Loading data...
+Loaded 57698 sequences from ../data/nt_promoter_dataset.tsv
+  Positives: 28849 (50.0%)
+  Negatives: 28849 (50.0%)
+
+Dataset splits:
+  Train: 46158 (80.0%)
+    Positives: 23079 (50.0%)
+  Val:   0 (skipped for cross-validation)
+  Test:  11540 (20.0%)
+    Positives: 5770 (50.0%)
+Traceback (most recent call last):
+  File "/scratch/user/yojoe56/CSCE-489-Project/nucleotide-transformer/fine_tune/code/fine_tune_deepromoter.py", line 479, in <module>
+    main()
+  File "/scratch/user/yojoe56/CSCE-489-Project/nucleotide-transformer/fine_tune/code/fine_tune_deepromoter.py", line 407, in main
+    skf = StratifiedKFold(n_splits=args.n_folds, shuffle=True, random_state=args.seed)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/user/yojoe56/CSCE-489-Project/venv/lib/python3.11/site-packages/sklearn/model_selection/_split.py", line 771, in __init__
+    super().__init__(n_splits=n_splits, shuffle=shuffle, random_state=random_state)
+  File "/scratch/user/yojoe56/CSCE-489-Project/venv/lib/python3.11/site-packages/sklearn/model_selection/_split.py", line 355, in __init__
+    raise ValueError(
+ValueError: k-fold cross-validation requires at least one train/test split by setting n_splits=2 or more, got n_splits=1.

@@ -1,0 +1,55 @@
+Restoring modules from user's deps
+===================================
+Multi-GPU Debug Training (2 GPUs)
+===================================
+Job ID: 17245982
+Number of GPUs: 2
+===================================
+[2025-12-02 20:23:36,762] torch.distributed.run: [WARNING] master_addr is only used for static rdzv_backend and when rdzv_endpoint is not specified.
+======================================================================
+IA3 Fine-tuning for Promoter Classification (Multi-GPU)
+======================================================================
+Distributed training: True
+World size: 2
+Rank: 0
+Local rank: 0
+Device: cuda:0
+Model: /scratch/user/yojoe56/CSCE-489-Project/nucleotide-transformer/artifacts/nucleotide-transformer-500m-human-ref
+Output: results/promoter_ia3_2gpu_debug
+Cross-validation folds: 2
+Steps per fold: 100
+Total batch size: 8
+
+Loading data...
+Loaded 57698 sequences from ../data/nt_promoter_dataset.tsv
+Loaded 57698 sequences from ../data/nt_promoter_dataset.tsv
+  Positives: 28849 (50.0%)  Positives: 28849 (50.0%)
+
+  Negatives: 28849 (50.0%)
+  Negatives: 28849 (50.0%)
+
+Dataset splits:
+  Train: 46158 (80.0%)
+
+Dataset splits:
+  Train: 46158 (80.0%)
+    Positives: 23079 (50.0%)
+  Val:   0 (skipped for cross-validation)
+  Test:  11540 (20.0%)
+    Positives: 23079 (50.0%)
+  Val:   0 (skipped for cross-validation)
+  Test:  11540 (20.0%)
+    Positives: 5770 (50.0%)
+    Positives: 5770 (50.0%)
+
+======================================================================
+Fold 1/2
+======================================================================
+Train size: 23079
+Val size: 23079
+
+Batch size configuration:
+  Total batch size: 8
+  World size: 2
+  Per-GPU batch size: 4
+slurmstepd: error: *** JOB 17245982 ON g073 CANCELLED AT 2025-12-02T20:23:52 ***

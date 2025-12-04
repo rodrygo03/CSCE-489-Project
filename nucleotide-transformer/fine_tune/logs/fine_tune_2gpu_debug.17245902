@@ -1,0 +1,170 @@
+Restoring modules from user's deps
+===================================
+Multi-GPU Debug Training (2 GPUs)
+===================================
+Job ID: 17245902
+Number of GPUs: 2
+===================================
+[2025-12-02 19:44:59,801] torch.distributed.run: [WARNING] master_addr is only used for static rdzv_backend and when rdzv_endpoint is not specified.
+======================================================================
+IA3 Fine-tuning for Promoter Classification (Multi-GPU)
+======================================================================
+Distributed training: True
+World size: 2
+Rank: 0
+Local rank: 0
+Device: cuda:0
+Model: /scratch/user/yojoe56/CSCE-489-Project/nucleotide-transformer/artifacts/nucleotide-transformer-500m-human-ref
+Output: results/promoter_ia3_2gpu_debug
+Cross-validation folds: 2
+Steps per fold: 100
+Total batch size: 8
+
+Loading data...
+Loaded 57698 sequences from ../data/nt_promoter_dataset.tsv
+Loaded 57698 sequences from ../data/nt_promoter_dataset.tsv
+  Positives: 28849 (50.0%)  Positives: 28849 (50.0%)
+
+  Negatives: 28849 (50.0%)  Negatives: 28849 (50.0%)
+
+
+Dataset splits:
+  Train: 46158 (80.0%)
+    Positives: 23079 (50.0%)
+  Val:   0 (skipped for cross-validation)
+  Test:  11540 (20.0%)
+    Positives: 5770 (50.0%)
+
+Dataset splits:
+  Train: 46158 (80.0%)
+    Positives: 23079 (50.0%)
+  Val:   0 (skipped for cross-validation)
+  Test:  11540 (20.0%)
+    Positives: 5770 (50.0%)
+
+======================================================================
+Fold 1/2
+======================================================================
+Train size: 23079
+Val size: 23079
+
+Batch size configuration:
+  Total batch size: 8
+  World size: 2
+  Per-GPU batch size: 4
+Some weights of EsmModel were not initialized from the model checkpoint at /scratch/user/yojoe56/CSCE-489-Project/nucleotide-transformer/artifacts/nucleotide-transformer-500m-human-ref and are newly initialized: ['esm.pooler.dense.bias', 'esm.pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Some weights of EsmModel were not initialized from the model checkpoint at /scratch/user/yojoe56/CSCE-489-Project/nucleotide-transformer/artifacts/nucleotide-transformer-500m-human-ref and are newly initialized: ['esm.pooler.dense.bias', 'esm.pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+
+Fold 0 - Parameter counts:
+  Trainable: 186,882 (0.04%)
+  Frozen: 480,438,241
+  Total: 480,625,123
+
+Training configuration:
+  Num epochs: 1
+  Steps per epoch: 2885
+  Total steps: 2885
+  Target steps: 100
+
+Epoch 1/1
+Training:   0%|          | 0/2885 [00:00<?, ?it/s]Training:   0%|          | 0/2885 [00:02<?, ?it/s, loss=0.819]Training:   0%|          | 1/2885 [00:02<1:46:52,  2.22s/it, loss=0.819]Training:   0%|          | 1/2885 [00:02<2:11:34,  2.74s/it, loss=0.819]
+Traceback (most recent call last):
+  File "/scratch/user/yojoe56/CSCE-489-Project/nucleotide-transformer/fine_tune/code/fine_tune_deepromoter_distributed.py", line 708, in <module>
+    main()
+  File "/scratch/user/yojoe56/CSCE-489-Project/nucleotide-transformer/fine_tune/code/fine_tune_deepromoter_distributed.py", line 641, in main
+    best_model_state, best_val_score = train_single_fold(
+                                       ^^^^^^^^^^^^^^^^^^
+  File "/scratch/user/yojoe56/CSCE-489-Project/nucleotide-transformer/fine_tune/code/fine_tune_deepromoter_distributed.py", line 479, in train_single_fold
+    train_loss, train_acc = train_epoch(
+                            ^^^^^^^^^^^^
+  File "/scratch/user/yojoe56/CSCE-489-Project/nucleotide-transformer/fine_tune/code/fine_tune_deepromoter_distributed.py", line 242, in train_epoch
+    logits = model(input_ids, attention_mask)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/sw/eb/sw/PyTorch/2.1.2-foss-2023a-CUDA-12.1.1/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/sw/eb/sw/PyTorch/2.1.2-foss-2023a-CUDA-12.1.1/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/sw/eb/sw/PyTorch/2.1.2-foss-2023a-CUDA-12.1.1/lib/python3.11/site-packages/torch/nn/parallel/distributed.py", line 1515, in forward
+Traceback (most recent call last):
+  File "/scratch/user/yojoe56/CSCE-489-Project/nucleotide-transformer/fine_tune/code/fine_tune_deepromoter_distributed.py", line 708, in <module>
+    main()
+  File "/scratch/user/yojoe56/CSCE-489-Project/nucleotide-transformer/fine_tune/code/fine_tune_deepromoter_distributed.py", line 641, in main
+    best_model_state, best_val_score = train_single_fold(
+                                       ^^^^^^^^^^^^^^^^^^
+  File "/scratch/user/yojoe56/CSCE-489-Project/nucleotide-transformer/fine_tune/code/fine_tune_deepromoter_distributed.py", line 479, in train_single_fold
+    train_loss, train_acc = train_epoch(
+                            ^^^^^^^^^^^^
+  File "/scratch/user/yojoe56/CSCE-489-Project/nucleotide-transformer/fine_tune/code/fine_tune_deepromoter_distributed.py", line 242, in train_epoch
+    logits = model(input_ids, attention_mask)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/sw/eb/sw/PyTorch/2.1.2-foss-2023a-CUDA-12.1.1/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/sw/eb/sw/PyTorch/2.1.2-foss-2023a-CUDA-12.1.1/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/sw/eb/sw/PyTorch/2.1.2-foss-2023a-CUDA-12.1.1/lib/python3.11/site-packages/torch/nn/parallel/distributed.py", line 1515, in forward
+    inputs, kwargs = self._pre_forward(*inputs, **kwargs)
+                      inputs, kwargs = self._pre_forward(*inputs, **kwargs) 
+  ^^^^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^^^^^^^^^^^^^^^^^^^^^^^^
+^^  File "/sw/eb/sw/PyTorch/2.1.2-foss-2023a-CUDA-12.1.1/lib/python3.11/site-packages/torch/nn/parallel/distributed.py", line 1409, in _pre_forward
+^^^^^^^^^^^^^^^^^^^^^^
+  File "/sw/eb/sw/PyTorch/2.1.2-foss-2023a-CUDA-12.1.1/lib/python3.11/site-packages/torch/nn/parallel/distributed.py", line 1409, in _pre_forward
+    if torch.is_grad_enabled() and self.reducer._rebuild_buckets():
+                                   ^^^^^^^^^^^^^^^    ^if torch.is_grad_enabled() and self.reducer._rebuild_buckets():^
+^^^^^ ^ ^ ^ ^ ^ ^ ^ ^ ^ 
+  RuntimeError :  Expected to have finished reduction in the prior iteration before starting a new one. This error indicates that your module has parameters that were not used in producing loss. You can enable unused parameter detection by passing the keyword argument `find_unused_parameters=True` to `torch.nn.parallel.DistributedDataParallel`, and by 
+making sure all `forward` function outputs participate in calculating loss. 
+If you already have done the above, then the distributed data parallel module wasn't able to locate the output tensors in the return value of your module's `forward` function. Please include the loss function and the structure of the return value of `forward` of your module when reporting this issue (e.g. list, dict, iterable).
+Parameter indices which did not receive grad for rank 1: 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68
+ In addition, you can set the environment variable TORCH_DISTRIBUTED_DEBUG to either INFO or DETAIL to print out information about which particular parameters did not receive gradient on this rank as part of this error 
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Expected to have finished reduction in the prior iteration before starting a new one. This error indicates that your module has parameters that were not used in producing loss. You can enable unused parameter detection by passing the keyword argument `find_unused_parameters=True` to `torch.nn.parallel.DistributedDataParallel`, and by 
+making sure all `forward` function outputs participate in calculating loss. 
+If you already have done the above, then the distributed data parallel module wasn't able to locate the output tensors in the return value of your module's `forward` function. Please include the loss function and the structure of the return value of `forward` of your module when reporting this issue (e.g. list, dict, iterable).
+Parameter indices which did not receive grad for rank 0: 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68
+ In addition, you can set the environment variable TORCH_DISTRIBUTED_DEBUG to either INFO or DETAIL to print out information about which particular parameters did not receive gradient on this rank as part of this error
+[2025-12-02 19:45:44,964] torch.distributed.elastic.multiprocessing.api: [ERROR] failed (exitcode: 1) local_rank: 0 (pid: 2631722) of binary: /scratch/user/yojoe56/CSCE-489-Project/venv/bin/python
+Traceback (most recent call last):
+  File "/scratch/user/yojoe56/CSCE-489-Project/venv/bin/torchrun", line 7, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/sw/eb/sw/PyTorch/2.1.2-foss-2023a-CUDA-12.1.1/lib/python3.11/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 346, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/sw/eb/sw/PyTorch/2.1.2-foss-2023a-CUDA-12.1.1/lib/python3.11/site-packages/torch/distributed/run.py", line 806, in main
+    run(args)
+  File "/sw/eb/sw/PyTorch/2.1.2-foss-2023a-CUDA-12.1.1/lib/python3.11/site-packages/torch/distributed/run.py", line 797, in run
+    elastic_launch(
+  File "/sw/eb/sw/PyTorch/2.1.2-foss-2023a-CUDA-12.1.1/lib/python3.11/site-packages/torch/distributed/launcher/api.py", line 134, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/sw/eb/sw/PyTorch/2.1.2-foss-2023a-CUDA-12.1.1/lib/python3.11/site-packages/torch/distributed/launcher/api.py", line 264, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+fine_tune_deepromoter_distributed.py FAILED
+------------------------------------------------------------
+Failures:
+[1]:
+  time      : 2025-12-02_19:45:44
+  host      : g066.cluster
+  rank      : 1 (local_rank: 1)
+  exitcode  : 1 (pid: 2631723)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2025-12-02_19:45:44
+  host      : g066.cluster
+  rank      : 0 (local_rank: 0)
+  exitcode  : 1 (pid: 2631722)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================
+Debug training complete!

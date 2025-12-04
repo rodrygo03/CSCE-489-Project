@@ -1,0 +1,170 @@
+Restoring modules from user's deps
+===================================
+Multi-GPU Training Configuration (torchrun)
+===================================
+Job ID: 17245968
+Number of nodes: 1
+Number of GPUs: 2
+CPUs available: 32
+===================================
+[2025-12-02 20:14:31,119] torch.distributed.run: [WARNING] master_addr is only used for static rdzv_backend and when rdzv_endpoint is not specified.
+Traceback (most recent call last):
+  File "/scratch/user/yojoe56/CSCE-489-Project/nucleotide-transformer/fine_tune/code/fine_tune_deepromoter_distributed_full.py", line 709, in <module>
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/scratch/user/yojoe56/CSCE-489-Project/nucleotide-transformer/fine_tune/code/fine_tune_deepromoter_distributed_full.py", line 709, in <module>
+Traceback (most recent call last):
+  File "/scratch/user/yojoe56/CSCE-489-Project/nucleotide-transformer/fine_tune/code/fine_tune_deepromoter_distributed_full.py", line 709, in <module>
+  File "/scratch/user/yojoe56/CSCE-489-Project/nucleotide-transformer/fine_tune/code/fine_tune_deepromoter_distributed_full.py", line 709, in <module>
+Traceback (most recent call last):
+  File "/scratch/user/yojoe56/CSCE-489-Project/nucleotide-transformer/fine_tune/code/fine_tune_deepromoter_distributed_full.py", line 709, in <module>
+Traceback (most recent call last):
+  File "/scratch/user/yojoe56/CSCE-489-Project/nucleotide-transformer/fine_tune/code/fine_tune_deepromoter_distributed_full.py", line 709, in <module>
+    main()
+    main()
+  File "/scratch/user/yojoe56/CSCE-489-Project/nucleotide-transformer/fine_tune/code/fine_tune_deepromoter_distributed_full.py", line 542, in main
+    main()  File "/scratch/user/yojoe56/CSCE-489-Project/nucleotide-transformer/fine_tune/code/fine_tune_deepromoter_distributed_full.py", line 542, in main
+
+  File "/scratch/user/yojoe56/CSCE-489-Project/nucleotide-transformer/fine_tune/code/fine_tune_deepromoter_distributed_full.py", line 542, in main
+    main()    
+main()
+      File "/scratch/user/yojoe56/CSCE-489-Project/nucleotide-transformer/fine_tune/code/fine_tune_deepromoter_distributed_full.py", line 542, in main
+rank, world_size, local_rank, is_distributed = setup_distributed()
+      File "/scratch/user/yojoe56/CSCE-489-Project/nucleotide-transformer/fine_tune/code/fine_tune_deepromoter_distributed_full.py", line 542, in main
+    main()rank, world_size, local_rank, is_distributed = setup_distributed()     
+
+ rank, world_size, local_rank, is_distributed = setup_distributed() 
+   File "/scratch/user/yojoe56/CSCE-489-Project/nucleotide-transformer/fine_tune/code/fine_tune_deepromoter_distributed_full.py", line 542, in main
+        rank, world_size, local_rank, is_distributed = setup_distributed()   
+       rank, world_size, local_rank, is_distributed = setup_distributed()
+                             rank, world_size, local_rank, is_distributed = setup_distributed()     
+                                                                                                                                                                                                                              ^     ^     ^     ^   ^ ^   ^ ^  ^^ ^  ^^ ^  ^^ ^^ ^^ ^^^^^ ^^^^^ ^^^^^ ^^^^^ ^^^^^ ^^^^^ ^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^  File "/scratch/user/yojoe56/CSCE-489-Project/nucleotide-transformer/fine_tune/code/fine_tune_deepromoter_distributed_full.py", line 73, in setup_distributed
+^^^^^^^^
+^^^^
+^^^  File "/scratch/user/yojoe56/CSCE-489-Project/nucleotide-transformer/fine_tune/code/fine_tune_deepromoter_distributed_full.py", line 73, in setup_distributed
+^^^  File "/scratch/user/yojoe56/CSCE-489-Project/nucleotide-transformer/fine_tune/code/fine_tune_deepromoter_distributed_full.py", line 73, in setup_distributed
+^^^^
+^^
+^  File "/scratch/user/yojoe56/CSCE-489-Project/nucleotide-transformer/fine_tune/code/fine_tune_deepromoter_distributed_full.py", line 73, in setup_distributed
+^      File "/scratch/user/yojoe56/CSCE-489-Project/nucleotide-transformer/fine_tune/code/fine_tune_deepromoter_distributed_full.py", line 73, in setup_distributed
+^torch.cuda.set_device(local_rank)^
+^^    
+torch.cuda.set_device(local_rank)  File "/sw/eb/sw/PyTorch/2.1.2-foss-2023a-CUDA-12.1.1/lib/python3.11/site-packages/torch/cuda/__init__.py", line 404, in set_device
+
+      File "/scratch/user/yojoe56/CSCE-489-Project/nucleotide-transformer/fine_tune/code/fine_tune_deepromoter_distributed_full.py", line 73, in setup_distributed
+torch.cuda.set_device(local_rank)
+  File "/sw/eb/sw/PyTorch/2.1.2-foss-2023a-CUDA-12.1.1/lib/python3.11/site-packages/torch/cuda/__init__.py", line 404, in set_device
+      File "/sw/eb/sw/PyTorch/2.1.2-foss-2023a-CUDA-12.1.1/lib/python3.11/site-packages/torch/cuda/__init__.py", line 404, in set_device
+torch.cuda.set_device(local_rank)
+    torch.cuda.set_device(local_rank)
+  File "/sw/eb/sw/PyTorch/2.1.2-foss-2023a-CUDA-12.1.1/lib/python3.11/site-packages/torch/cuda/__init__.py", line 404, in set_device
+  File "/sw/eb/sw/PyTorch/2.1.2-foss-2023a-CUDA-12.1.1/lib/python3.11/site-packages/torch/cuda/__init__.py", line 404, in set_device
+    torch.cuda.set_device(local_rank)
+  File "/sw/eb/sw/PyTorch/2.1.2-foss-2023a-CUDA-12.1.1/lib/python3.11/site-packages/torch/cuda/__init__.py", line 404, in set_device
+    torch._C._cuda_setDevice(device)    
+torch._C._cuda_setDevice(device)
+RuntimeError: CUDA error: invalid device ordinal
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1.
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+RuntimeError
+: CUDA error: invalid device ordinal
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1.
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+    
+torch._C._cuda_setDevice(device)
+RuntimeError: CUDA error: invalid device ordinal
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1.
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+    torch._C._cuda_setDevice(device)    
+torch._C._cuda_setDevice(device)
+RuntimeError: CUDA error: invalid device ordinal
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1.
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+RuntimeError
+: CUDA error: invalid device ordinal
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1.
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+    torch._C._cuda_setDevice(device)
+RuntimeError: CUDA error: invalid device ordinal
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1.
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+[2025-12-02 20:15:26,348] torch.distributed.elastic.multiprocessing.api: [WARNING] Sending process 31390 closing signal SIGTERM
+[2025-12-02 20:15:26,348] torch.distributed.elastic.multiprocessing.api: [WARNING] Sending process 31391 closing signal SIGTERM
+[2025-12-02 20:15:26,626] torch.distributed.elastic.multiprocessing.api: [ERROR] failed (exitcode: 1) local_rank: 2 (pid: 31392) of binary: /scratch/user/yojoe56/CSCE-489-Project/venv/bin/python
+Traceback (most recent call last):
+  File "/scratch/user/yojoe56/CSCE-489-Project/venv/bin/torchrun", line 7, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/sw/eb/sw/PyTorch/2.1.2-foss-2023a-CUDA-12.1.1/lib/python3.11/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 346, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/sw/eb/sw/PyTorch/2.1.2-foss-2023a-CUDA-12.1.1/lib/python3.11/site-packages/torch/distributed/run.py", line 806, in main
+    run(args)
+  File "/sw/eb/sw/PyTorch/2.1.2-foss-2023a-CUDA-12.1.1/lib/python3.11/site-packages/torch/distributed/run.py", line 797, in run
+    elastic_launch(
+  File "/sw/eb/sw/PyTorch/2.1.2-foss-2023a-CUDA-12.1.1/lib/python3.11/site-packages/torch/distributed/launcher/api.py", line 134, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/sw/eb/sw/PyTorch/2.1.2-foss-2023a-CUDA-12.1.1/lib/python3.11/site-packages/torch/distributed/launcher/api.py", line 264, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+fine_tune_deepromoter_distributed_full.py FAILED
+------------------------------------------------------------
+Failures:
+[1]:
+  time      : 2025-12-02_20:15:26
+  host      : g073.cluster
+  rank      : 3 (local_rank: 3)
+  exitcode  : 1 (pid: 31393)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[2]:
+  time      : 2025-12-02_20:15:26
+  host      : g073.cluster
+  rank      : 4 (local_rank: 4)
+  exitcode  : 1 (pid: 31394)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[3]:
+  time      : 2025-12-02_20:15:26
+  host      : g073.cluster
+  rank      : 5 (local_rank: 5)
+  exitcode  : 1 (pid: 31395)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[4]:
+  time      : 2025-12-02_20:15:26
+  host      : g073.cluster
+  rank      : 6 (local_rank: 6)
+  exitcode  : 1 (pid: 31396)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[5]:
+  time      : 2025-12-02_20:15:26
+  host      : g073.cluster
+  rank      : 7 (local_rank: 7)
+  exitcode  : 1 (pid: 31397)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2025-12-02_20:15:26
+  host      : g073.cluster
+  rank      : 2 (local_rank: 2)
+  exitcode  : 1 (pid: 31392)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================
+Training complete!

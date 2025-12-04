@@ -23,7 +23,7 @@ python -m venv venv
 source venv/bin/activate
 
 pip install -U pip
-pip install datasets
+pip install "datasets==3.6.0"
 pip install --upgrade "transformers==4.38.0"
 ```
 

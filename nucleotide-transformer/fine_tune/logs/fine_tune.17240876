@@ -1,0 +1,36 @@
+Restoring modules from user's deps
+======================================================================
+IA3 Fine-tuning for Promoter Classification
+======================================================================
+Device: cuda
+Model: InstaDeepAI/nucleotide-transformer-500m-human-ref
+Output: results/promoter_ia3
+Cross-validation folds: 10
+Steps per fold: 10000
+
+Loading data...
+Traceback (most recent call last):
+  File "/scratch/user/yojoe56/CSCE-489-Project/nucleotide-transformer/fine_tune/code/fine_tune_deepromoter.py", line 479, in <module>
+    main()
+  File "/scratch/user/yojoe56/CSCE-489-Project/nucleotide-transformer/fine_tune/code/fine_tune_deepromoter.py", line 385, in main
+    train_val_seqs, train_val_labels, _, _, test_seqs, test_labels = load_promoter_data(
+                                                                     ^^^^^^^^^^^^^^^^^^^
+  File "/scratch/user/yojoe56/CSCE-489-Project/nucleotide-transformer/fine_tune/code/pytorch_deePromoter.py", line 103, in load_promoter_data
+    df = pd.read_csv(data_path, sep='\t')
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/sw/eb/sw/SciPy-bundle/2023.07-gfbf-2023a/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 912, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/sw/eb/sw/SciPy-bundle/2023.07-gfbf-2023a/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 577, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/sw/eb/sw/SciPy-bundle/2023.07-gfbf-2023a/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 1407, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/sw/eb/sw/SciPy-bundle/2023.07-gfbf-2023a/lib/python3.11/site-packages/pandas/io/parsers/readers.py", line 1661, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "/sw/eb/sw/SciPy-bundle/2023.07-gfbf-2023a/lib/python3.11/site-packages/pandas/io/common.py", line 859, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'data/nt_promoter_dataset.tsv'
