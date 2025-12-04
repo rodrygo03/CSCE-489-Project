@@ -1,0 +1,50 @@
+Restoring modules from user's deps
+===================================
+Multi-GPU Debug Training (2 GPUs)
+===================================
+Job ID: 17245898
+Number of GPUs: 2
+===================================
+[2025-12-02 19:42:15,402] torch.distributed.run: [WARNING] master_addr is only used for static rdzv_backend and when rdzv_endpoint is not specified.
+/scratch/user/yojoe56/CSCE-489-Project/venv/bin/python: can't open file '/scratch/user/yojoe56/CSCE-489-Project/nucleotide-transformer/fine_tune/code/fine_tune_deepromoter_distributed.py': [Errno 2] No such file or directory
+/scratch/user/yojoe56/CSCE-489-Project/venv/bin/python: can't open file '/scratch/user/yojoe56/CSCE-489-Project/nucleotide-transformer/fine_tune/code/fine_tune_deepromoter_distributed.py': [Errno 2] No such file or directory
+[2025-12-02 19:42:20,843] torch.distributed.elastic.multiprocessing.api: [ERROR] failed (exitcode: 2) local_rank: 0 (pid: 2629407) of binary: /scratch/user/yojoe56/CSCE-489-Project/venv/bin/python
+Traceback (most recent call last):
+  File "/scratch/user/yojoe56/CSCE-489-Project/venv/bin/torchrun", line 7, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/sw/eb/sw/PyTorch/2.1.2-foss-2023a-CUDA-12.1.1/lib/python3.11/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 346, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/sw/eb/sw/PyTorch/2.1.2-foss-2023a-CUDA-12.1.1/lib/python3.11/site-packages/torch/distributed/run.py", line 806, in main
+    run(args)
+  File "/sw/eb/sw/PyTorch/2.1.2-foss-2023a-CUDA-12.1.1/lib/python3.11/site-packages/torch/distributed/run.py", line 797, in run
+    elastic_launch(
+  File "/sw/eb/sw/PyTorch/2.1.2-foss-2023a-CUDA-12.1.1/lib/python3.11/site-packages/torch/distributed/launcher/api.py", line 134, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/sw/eb/sw/PyTorch/2.1.2-foss-2023a-CUDA-12.1.1/lib/python3.11/site-packages/torch/distributed/launcher/api.py", line 264, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+fine_tune_deepromoter_distributed.py FAILED
+------------------------------------------------------------
+Failures:
+[1]:
+  time      : 2025-12-02_19:42:20
+  host      : g066.cluster
+  rank      : 1 (local_rank: 1)
+  exitcode  : 2 (pid: 2629408)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2025-12-02_19:42:20
+  host      : g066.cluster
+  rank      : 0 (local_rank: 0)
+  exitcode  : 2 (pid: 2629407)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================
+Debug training complete!

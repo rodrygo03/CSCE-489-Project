@@ -40,7 +40,7 @@ class PromoterDataset(Dataset):
         """
         self.sequences = sequences
         self.labels = labels
-        self.tokenizer = AutoTokenizer.from_pretrained(tokenizer_name)
+        self.tokenizer = AutoTokenizer.from_pretrained(tokenizer_name, local_files_only=True)
         self.max_length = max_length
         
         assert len(sequences) == len(labels), "Sequences and labels must have same length"

@@ -1,0 +1,51 @@
+Restoring modules from user's deps
+======================================================================
+IA3 Fine-tuning for Promoter Classification
+======================================================================
+Device: cuda
+Model: /scratch/user/yojoe56/CSCE-489-Project/artifacts/nucleotide-transformer-500m-human-ref
+Output: results/promoter_ia3
+Cross-validation folds: 10
+Steps per fold: 10000
+
+Loading data...
+Loaded 57698 sequences from ../data/nt_promoter_dataset.tsv
+  Positives: 28849 (50.0%)
+  Negatives: 28849 (50.0%)
+
+Dataset splits:
+  Train: 46158 (80.0%)
+    Positives: 23079 (50.0%)
+  Val:   0 (skipped for cross-validation)
+  Test:  11540 (20.0%)
+    Positives: 5770 (50.0%)
+Traceback (most recent call last):
+  File "/scratch/user/yojoe56/CSCE-489-Project/venv/lib/python3.11/site-packages/transformers/utils/hub.py", line 398, in cached_file
+    resolved_file = hf_hub_download(
+                    ^^^^^^^^^^^^^^^^
+  File "/scratch/user/yojoe56/CSCE-489-Project/venv/lib/python3.11/site-packages/huggingface_hub/utils/_validators.py", line 106, in _inner_fn
+    validate_repo_id(arg_value)
+  File "/scratch/user/yojoe56/CSCE-489-Project/venv/lib/python3.11/site-packages/huggingface_hub/utils/_validators.py", line 154, in validate_repo_id
+    raise HFValidationError(
+huggingface_hub.errors.HFValidationError: Repo id must be in the form 'repo_name' or 'namespace/repo_name': '/scratch/user/yojoe56/CSCE-489-Project/artifacts/nucleotide-transformer-500m-human-ref'. Use `repo_type` argument if needed.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/scratch/user/yojoe56/CSCE-489-Project/nucleotide-transformer/fine_tune/code/fine_tune_deepromoter.py", line 479, in <module>
+    main()
+  File "/scratch/user/yojoe56/CSCE-489-Project/nucleotide-transformer/fine_tune/code/fine_tune_deepromoter.py", line 393, in main
+    full_dataset = PromoterDataset(
+                   ^^^^^^^^^^^^^^^^
+  File "/scratch/user/yojoe56/CSCE-489-Project/nucleotide-transformer/fine_tune/code/pytorch_deePromoter.py", line 43, in __init__
+    self.tokenizer = AutoTokenizer.from_pretrained(tokenizer_name, local_files_only=True)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/user/yojoe56/CSCE-489-Project/venv/lib/python3.11/site-packages/transformers/models/auto/tokenization_auto.py", line 767, in from_pretrained
+    tokenizer_config = get_tokenizer_config(pretrained_model_name_or_path, **kwargs)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/user/yojoe56/CSCE-489-Project/venv/lib/python3.11/site-packages/transformers/models/auto/tokenization_auto.py", line 600, in get_tokenizer_config
+    resolved_config_file = cached_file(
+                           ^^^^^^^^^^^^
+  File "/scratch/user/yojoe56/CSCE-489-Project/venv/lib/python3.11/site-packages/transformers/utils/hub.py", line 462, in cached_file
+    raise EnvironmentError(
+OSError: Incorrect path_or_model_id: '/scratch/user/yojoe56/CSCE-489-Project/artifacts/nucleotide-transformer-500m-human-ref'. Please provide either the path to a local folder or the repo_id of a model on the Hub.

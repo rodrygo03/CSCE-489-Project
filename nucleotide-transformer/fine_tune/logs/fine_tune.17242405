@@ -1,0 +1,50 @@
+Restoring modules from user's deps
+Some weights of EsmModel were not initialized from the model checkpoint at /scratch/user/yojoe56/CSCE-489-Project/nucleotide-transformer/artifacts/nucleotide-transformer-500m-human-ref and are newly initialized: ['esm.pooler.dense.bias', 'esm.pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+======================================================================
+IA3 Fine-tuning for Promoter Classification
+======================================================================
+Device: cuda
+Model: /scratch/user/yojoe56/CSCE-489-Project/nucleotide-transformer/artifacts/nucleotide-transformer-500m-human-ref
+Output: results/promoter_ia3_debug
+Cross-validation folds: 3
+Steps per fold: 50
+
+Loading data...
+Loaded 57698 sequences from ../data/nt_promoter_dataset.tsv
+  Positives: 28849 (50.0%)
+  Negatives: 28849 (50.0%)
+
+Dataset splits:
+  Train: 46158 (80.0%)
+    Positives: 23079 (50.0%)
+  Val:   0 (skipped for cross-validation)
+  Test:  11540 (20.0%)
+    Positives: 5770 (50.0%)
+
+======================================================================
+Fold 1/3
+======================================================================
+Train size: 30772
+Val size: 15386
+Model initialized:
+  Encoder: /scratch/user/yojoe56/CSCE-489-Project/nucleotide-transformer/artifacts/nucleotide-transformer-500m-human-ref
+  Hidden size: 1280
+  Num layers: 24
+  IA3 params per layer: 7680
+  Total IA3 params: 184320
+  Classifier params: 2562
+
+Fold 0 - Parameter counts:
+  Trainable: 186,882 (0.04%)
+  Frozen: 480,438,241
+  Total: 480,625,123
+
+Training configuration:
+  Num epochs: 1
+  Steps per epoch: 15386
+  Total steps: 15386
+  Target steps: 50
+
+Epoch 1/1
+Training:   0%|          | 0/15386 [00:00<?, ?it/s]slurmstepd: error: *** JOB 17242405 ON g092 CANCELLED AT 2025-12-02T12:49:21 ***
