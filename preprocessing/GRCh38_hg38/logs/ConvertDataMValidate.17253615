@@ -1,0 +1,12 @@
+Restoring modules from user's deps
+Starting conversion...
+In main...
+converting the following arrow files:
+File: ./artifacts/datasets/human_reference_genome/6kbp/masked/masked_val_random_ds/data-00000-of-00001.arrow
+
+writing merged jsonl to: ./artifacts/datasets/human_reference_genome/6kbp/jsonl/validate/human_reference_genome-mvalidate.jsonl
+loading dataset from: ./artifacts/datasets/human_reference_genome/6kbp/masked/masked_val_random_ds/data-00000-of-00001.arrow
+found split 'train' with 7784 examples
+num of sequences written: 7784
+Output JSONL: ./artifacts/datasets/human_reference_genome/6kbp/jsonl/validate/human_reference_genome-mvalidate.jsonl
+Done.
