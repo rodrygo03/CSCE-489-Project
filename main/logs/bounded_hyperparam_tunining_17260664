@@ -1,0 +1,10 @@
+loading deps
+usage: val_bidir_bounded_gram.py [-h] --tok_path TOK_PATH --fwd_idx_path
+                                 FWD_IDX_PATH --bwd_idx_path BWD_IDX_PATH
+                                 --dataset_path DATASET_PATH
+                                 [--max_support_fwd MAX_SUPPORT_FWD [MAX_SUPPORT_FWD ...]]
+                                 [--max_support_bwd MAX_SUPPORT_BWD [MAX_SUPPORT_BWD ...]]
+                                 --mask_token_id MASK_TOKEN_ID
+                                 [--max_sequences MAX_SEQUENCES]
+                                 [--output_dir OUTPUT_DIR]
+val_bidir_bounded_gram.py: error: unrecognized arguments: ----max_sequences 30
