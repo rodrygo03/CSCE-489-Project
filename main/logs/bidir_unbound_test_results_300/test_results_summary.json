@@ -1,0 +1,10 @@
+{
+  "max_support_fwd": 8,
+  "max_support_bwd": 8,
+  "num_sequences": 300,
+  "mean_loss": 7.915591410260384,
+  "mean_accuracy": 0.5398888888888888,
+  "median_accuracy": 0.54,
+  "mean_perplexity": 254.6792867147033,
+  "median_perplexity": 241.8420920073774
+}

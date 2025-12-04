@@ -1,0 +1,77 @@
+loading deps
+Loading dataset from ../preprocessing/GRCh38_hg38/artifacts/datasets/human_reference_genome/6kbp/masked/masked_val_random_ds...
+Dataset loaded: 7784 sequences
+
+Tuning over 4 hyperparameter combinations...
+max_support_fwd: [8, 16]
+max_support_bwd: [8, 16]
+
+
+================================================================================
+Testing: max_support_fwd=8, max_support_bwd=8
+================================================================================
+Evaluating sequences:   0%|          | 0/30 [00:00<?, ?it/s]Evaluating sequences:   3%|▎         | 1/30 [00:00<00:10,  2.68it/s]Evaluating sequences:   7%|▋         | 2/30 [00:00<00:10,  2.76it/s]Evaluating sequences:  10%|█         | 3/30 [00:01<00:09,  2.79it/s]Evaluating sequences:  13%|█▎        | 4/30 [00:01<00:09,  2.79it/s]Evaluating sequences:  17%|█▋        | 5/30 [00:01<00:08,  2.82it/s]Evaluating sequences:  20%|██        | 6/30 [00:02<00:08,  2.82it/s]Evaluating sequences:  23%|██▎       | 7/30 [00:02<00:08,  2.83it/s]Evaluating sequences:  27%|██▋       | 8/30 [00:02<00:07,  2.79it/s]Evaluating sequences:  30%|███       | 9/30 [00:03<00:07,  2.78it/s]Evaluating sequences:  33%|███▎      | 10/30 [00:03<00:07,  2.81it/s]Evaluating sequences:  37%|███▋      | 11/30 [00:03<00:06,  2.80it/s]Evaluating sequences:  40%|████      | 12/30 [00:04<00:06,  2.77it/s]Evaluating sequences:  43%|████▎     | 13/30 [00:04<00:06,  2.75it/s]Evaluating sequences:  47%|████▋     | 14/30 [00:05<00:05,  2.74it/s]Evaluating sequences:  50%|█████     | 15/30 [00:05<00:05,  2.71it/s]Evaluating sequences:  53%|█████▎    | 16/30 [00:05<00:05,  2.70it/s]Evaluating sequences:  57%|█████▋    | 17/30 [00:06<00:04,  2.71it/s]Evaluating sequences:  60%|██████    | 18/30 [00:06<00:04,  2.73it/s]Evaluating sequences:  63%|██████▎   | 19/30 [00:06<00:04,  2.75it/s]Evaluating sequences:  67%|██████▋   | 20/30 [00:07<00:03,  2.76it/s]Evaluating sequences:  70%|███████   | 21/30 [00:07<00:03,  2.78it/s]Evaluating sequences:  73%|███████▎  | 22/30 [00:07<00:02,  2.78it/s]Evaluating sequences:  77%|███████▋  | 23/30 [00:08<00:02,  2.81it/s]Evaluating sequences:  80%|████████  | 24/30 [00:08<00:02,  2.82it/s]Evaluating sequences:  83%|████████▎ | 25/30 [00:09<00:01,  2.81it/s]Evaluating sequences:  87%|████████▋ | 26/30 [00:09<00:01,  2.83it/s]Evaluating sequences:  90%|█████████ | 27/30 [00:09<00:01,  2.84it/s]Evaluating sequences:  93%|█████████▎| 28/30 [00:10<00:00,  2.84it/s]Evaluating sequences:  97%|█████████▋| 29/30 [00:10<00:00,  2.86it/s]Evaluating sequences: 100%|██████████| 30/30 [00:10<00:00,  2.83it/s]Evaluating sequences: 100%|██████████| 30/30 [00:10<00:00,  2.79it/s]
+
+Results:
+  Number of sequences: 30
+  Mean Loss: 7.8614
+  Mean Accuracy: 0.5407
+  Median Accuracy: 0.5467
+  Mean Perplexity (Rives): 256.4967
+  Median Perplexity (Rives): 241.4151
+
+================================================================================
+Testing: max_support_fwd=8, max_support_bwd=16
+================================================================================
+Evaluating sequences:   0%|          | 0/30 [00:00<?, ?it/s]Evaluating sequences:   3%|▎         | 1/30 [00:11<05:22, 11.11s/it]Evaluating sequences:   7%|▋         | 2/30 [00:12<02:34,  5.50s/it]Evaluating sequences:  10%|█         | 3/30 [00:14<01:41,  3.77s/it]Evaluating sequences:  13%|█▎        | 4/30 [00:14<01:05,  2.50s/it]Evaluating sequences:  17%|█▋        | 5/30 [00:16<00:49,  1.98s/it]Evaluating sequences:  20%|██        | 6/30 [00:16<00:34,  1.44s/it]Evaluating sequences:  23%|██▎       | 7/30 [00:17<00:28,  1.22s/it]Evaluating sequences:  27%|██▋       | 8/30 [00:17<00:23,  1.05s/it]Evaluating sequences:  30%|███       | 9/30 [00:18<00:17,  1.18it/s]Evaluating sequences:  33%|███▎      | 10/30 [00:18<00:14,  1.41it/s]Evaluating sequences:  37%|███▋      | 11/30 [00:19<00:11,  1.63it/s]Evaluating sequences:  40%|████      | 12/30 [00:19<00:09,  1.83it/s]Evaluating sequences:  43%|████▎     | 13/30 [00:20<00:10,  1.55it/s]Evaluating sequences:  47%|████▋     | 14/30 [00:20<00:09,  1.77it/s]Evaluating sequences:  50%|█████     | 15/30 [00:21<00:07,  1.98it/s]Evaluating sequences:  53%|█████▎    | 16/30 [00:21<00:06,  2.16it/s]Evaluating sequences:  57%|█████▋    | 17/30 [00:22<00:08,  1.61it/s]Evaluating sequences:  60%|██████    | 18/30 [00:22<00:06,  1.85it/s]Evaluating sequences:  63%|██████▎   | 19/30 [00:23<00:07,  1.41it/s]Evaluating sequences:  67%|██████▋   | 20/30 [00:24<00:06,  1.65it/s]Evaluating sequences:  70%|███████   | 21/30 [00:25<00:05,  1.51it/s]Evaluating sequences:  73%|███████▎  | 22/30 [00:25<00:04,  1.73it/s]Evaluating sequences:  77%|███████▋  | 23/30 [00:25<00:03,  1.95it/s]Evaluating sequences:  80%|████████  | 24/30 [00:26<00:02,  2.13it/s]Evaluating sequences:  83%|████████▎ | 25/30 [00:26<00:02,  1.99it/s]Evaluating sequences:  87%|████████▋ | 26/30 [00:27<00:01,  2.14it/s]Evaluating sequences:  90%|█████████ | 27/30 [00:27<00:01,  2.29it/s]Evaluating sequences:  93%|█████████▎| 28/30 [00:27<00:00,  2.40it/s]Evaluating sequences:  97%|█████████▋| 29/30 [00:28<00:00,  2.03it/s]Evaluating sequences: 100%|██████████| 30/30 [00:29<00:00,  1.49it/s]Evaluating sequences: 100%|██████████| 30/30 [00:29<00:00,  1.01it/s]
+
+Results:
+  Number of sequences: 30
+  Mean Loss: 7.8470
+  Mean Accuracy: 0.5407
+  Median Accuracy: 0.5467
+  Mean Perplexity (Rives): 254.1267
+  Median Perplexity (Rives): 239.5183
+
+================================================================================
+Testing: max_support_fwd=16, max_support_bwd=8
+================================================================================
+Evaluating sequences:   0%|          | 0/30 [00:00<?, ?it/s]Evaluating sequences:   3%|▎         | 1/30 [00:00<00:24,  1.20it/s]Evaluating sequences:   7%|▋         | 2/30 [00:01<00:15,  1.81it/s]Evaluating sequences:  10%|█         | 3/30 [00:01<00:12,  2.17it/s]Evaluating sequences:  13%|█▎        | 4/30 [00:01<00:10,  2.40it/s]Evaluating sequences:  17%|█▋        | 5/30 [00:02<00:09,  2.55it/s]Evaluating sequences:  20%|██        | 6/30 [00:02<00:09,  2.64it/s]Evaluating sequences:  23%|██▎       | 7/30 [00:02<00:08,  2.67it/s]Evaluating sequences:  27%|██▋       | 8/30 [00:03<00:08,  2.70it/s]Evaluating sequences:  30%|███       | 9/30 [00:03<00:07,  2.71it/s]Evaluating sequences:  33%|███▎      | 10/30 [00:04<00:07,  2.75it/s]Evaluating sequences:  37%|███▋      | 11/30 [00:04<00:06,  2.77it/s]Evaluating sequences:  40%|████      | 12/30 [00:04<00:06,  2.78it/s]Evaluating sequences:  43%|████▎     | 13/30 [00:05<00:06,  2.78it/s]Evaluating sequences:  47%|████▋     | 14/30 [00:05<00:05,  2.80it/s]Evaluating sequences:  50%|█████     | 15/30 [00:05<00:05,  2.79it/s]Evaluating sequences:  53%|█████▎    | 16/30 [00:06<00:05,  2.79it/s]Evaluating sequences:  57%|█████▋    | 17/30 [00:06<00:04,  2.80it/s]Evaluating sequences:  60%|██████    | 18/30 [00:06<00:04,  2.82it/s]Evaluating sequences:  63%|██████▎   | 19/30 [00:07<00:03,  2.84it/s]Evaluating sequences:  67%|██████▋   | 20/30 [00:07<00:03,  2.85it/s]Evaluating sequences:  70%|███████   | 21/30 [00:07<00:03,  2.86it/s]Evaluating sequences:  73%|███████▎  | 22/30 [00:08<00:02,  2.85it/s]Evaluating sequences:  77%|███████▋  | 23/30 [00:08<00:02,  2.90it/s]Evaluating sequences:  80%|████████  | 24/30 [00:08<00:02,  2.91it/s]Evaluating sequences:  83%|████████▎ | 25/30 [00:09<00:01,  2.91it/s]Evaluating sequences:  87%|████████▋ | 26/30 [00:09<00:01,  2.90it/s]Evaluating sequences:  90%|█████████ | 27/30 [00:09<00:01,  2.88it/s]Evaluating sequences:  93%|█████████▎| 28/30 [00:10<00:00,  2.86it/s]Evaluating sequences:  97%|█████████▋| 29/30 [00:10<00:00,  2.85it/s]Evaluating sequences: 100%|██████████| 30/30 [00:11<00:00,  2.81it/s]Evaluating sequences: 100%|██████████| 30/30 [00:11<00:00,  2.71it/s]
+
+Results:
+  Number of sequences: 30
+  Mean Loss: 7.8470
+  Mean Accuracy: 0.5407
+  Median Accuracy: 0.5467
+  Mean Perplexity (Rives): 254.1267
+  Median Perplexity (Rives): 239.5183
+
+================================================================================
+Testing: max_support_fwd=16, max_support_bwd=16
+================================================================================
+Evaluating sequences:   0%|          | 0/30 [00:00<?, ?it/s]Evaluating sequences:   3%|▎         | 1/30 [00:00<00:11,  2.51it/s]Evaluating sequences:   7%|▋         | 2/30 [00:00<00:10,  2.58it/s]Evaluating sequences:  10%|█         | 3/30 [00:01<00:10,  2.62it/s]Evaluating sequences:  13%|█▎        | 4/30 [00:01<00:09,  2.64it/s]Evaluating sequences:  17%|█▋        | 5/30 [00:01<00:09,  2.65it/s]Evaluating sequences:  20%|██        | 6/30 [00:02<00:09,  2.64it/s]Evaluating sequences:  23%|██▎       | 7/30 [00:02<00:08,  2.62it/s]Evaluating sequences:  27%|██▋       | 8/30 [00:03<00:08,  2.63it/s]Evaluating sequences:  30%|███       | 9/30 [00:03<00:08,  2.61it/s]Evaluating sequences:  33%|███▎      | 10/30 [00:03<00:07,  2.63it/s]Evaluating sequences:  37%|███▋      | 11/30 [00:04<00:07,  2.61it/s]Evaluating sequences:  40%|████      | 12/30 [00:04<00:06,  2.60it/s]Evaluating sequences:  43%|████▎     | 13/30 [00:04<00:06,  2.61it/s]Evaluating sequences:  47%|████▋     | 14/30 [00:05<00:06,  2.64it/s]Evaluating sequences:  50%|█████     | 15/30 [00:05<00:05,  2.62it/s]Evaluating sequences:  53%|█████▎    | 16/30 [00:06<00:05,  2.61it/s]Evaluating sequences:  57%|█████▋    | 17/30 [00:06<00:04,  2.63it/s]Evaluating sequences:  60%|██████    | 18/30 [00:06<00:04,  2.65it/s]Evaluating sequences:  63%|██████▎   | 19/30 [00:07<00:04,  2.66it/s]Evaluating sequences:  67%|██████▋   | 20/30 [00:07<00:03,  2.65it/s]Evaluating sequences:  70%|███████   | 21/30 [00:07<00:03,  2.64it/s]Evaluating sequences:  73%|███████▎  | 22/30 [00:08<00:03,  2.60it/s]Evaluating sequences:  77%|███████▋  | 23/30 [00:08<00:02,  2.63it/s]Evaluating sequences:  80%|████████  | 24/30 [00:09<00:02,  2.63it/s]Evaluating sequences:  83%|████████▎ | 25/30 [00:09<00:01,  2.62it/s]Evaluating sequences:  87%|████████▋ | 26/30 [00:09<00:01,  2.61it/s]Evaluating sequences:  90%|█████████ | 27/30 [00:10<00:01,  2.63it/s]Evaluating sequences:  93%|█████████▎| 28/30 [00:10<00:00,  2.63it/s]Evaluating sequences:  97%|█████████▋| 29/30 [00:11<00:00,  2.62it/s]Evaluating sequences: 100%|██████████| 30/30 [00:11<00:00,  2.59it/s]Evaluating sequences: 100%|██████████| 30/30 [00:11<00:00,  2.62it/s]
+
+Results:
+  Number of sequences: 30
+  Mean Loss: 7.8530
+  Mean Accuracy: 0.5407
+  Median Accuracy: 0.5467
+  Mean Perplexity (Rives): 255.1085
+  Median Perplexity (Rives): 240.3050
+
+================================================================================
+TUNING COMPLETE
+================================================================================
+
+Best configuration by MEDIAN ACCURACY:
+  max_support_fwd=8, max_support_bwd=8
+  Median Accuracy: 0.5467
+  Mean Perplexity: 256.4967
+
+Best configuration by MEAN PERPLEXITY:
+  max_support_fwd=8, max_support_bwd=16
+  Median Accuracy: 0.5467
+  Mean Perplexity: 254.1267
+
+All results saved to: tuning_results
+Summary saved to: tuning_results/tuning_summary.json

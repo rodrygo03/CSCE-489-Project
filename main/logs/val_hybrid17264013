@@ -1,0 +1,137 @@
+loading deps
+source nvenv
+running ...
+/sw/eb/sw/PyTorch/2.1.2-foss-2023a-CUDA-12.1.1/lib/python3.11/site-packages/torch/_utils.py:831: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  return self.fget.__get__(instance, owner)()
+Loading dataset from ../preprocessing/GRCh38_hg38/artifacts/datasets/human_reference_genome/6kbp/masked/masked_val_random_ds...
+Dataset loaded: 7784 sequences
+
+Tuning over 8 hyperparameter combinations...
+lam_nt_sparse values: [0.7, 0.8]
+lam_nt_dense values: [0.2, 0.5]
+cnt_thresh values: [2, 7]
+Fixed hyperparameters:
+  max_support_fwd: 8
+  max_support_bwd: 8
+
+
+================================================================================
+Testing: lam_nt_sparse=0.70, lam_nt_dense=0.20, cnt_thresh=2
+================================================================================
+Evaluating sequences:   0%|          | 0/20 [00:00<?, ?it/s]Evaluating sequences:   5%|▌         | 1/20 [00:45<14:31, 45.84s/it]Evaluating sequences:  10%|█         | 2/20 [01:30<13:32, 45.11s/it]Evaluating sequences:  15%|█▌        | 3/20 [02:15<12:43, 44.91s/it]Evaluating sequences:  20%|██        | 4/20 [02:59<11:57, 44.84s/it]Evaluating sequences:  25%|██▌       | 5/20 [03:44<11:12, 44.81s/it]Evaluating sequences:  30%|███       | 6/20 [04:29<10:27, 44.81s/it]Evaluating sequences:  35%|███▌      | 7/20 [05:14<09:42, 44.81s/it]Evaluating sequences:  40%|████      | 8/20 [05:59<08:57, 44.82s/it]Evaluating sequences:  45%|████▌     | 9/20 [06:43<08:13, 44.83s/it]Evaluating sequences:  50%|█████     | 10/20 [07:28<07:28, 44.83s/it]Evaluating sequences:  55%|█████▌    | 11/20 [08:13<06:43, 44.84s/it]Evaluating sequences:  60%|██████    | 12/20 [08:58<05:58, 44.85s/it]Evaluating sequences:  65%|██████▌   | 13/20 [09:43<05:14, 44.86s/it]Evaluating sequences:  70%|███████   | 14/20 [10:28<04:29, 44.87s/it]Evaluating sequences:  75%|███████▌  | 15/20 [11:13<03:44, 44.88s/it]Evaluating sequences:  80%|████████  | 16/20 [11:58<02:59, 44.91s/it]Evaluating sequences:  85%|████████▌ | 17/20 [12:45<02:16, 45.50s/it]Evaluating sequences:  90%|█████████ | 18/20 [13:29<01:30, 45.31s/it]Evaluating sequences:  95%|█████████▌| 19/20 [14:15<00:45, 45.37s/it]Evaluating sequences: 100%|██████████| 20/20 [15:00<00:00, 45.22s/it]Evaluating sequences: 100%|██████████| 20/20 [15:00<00:00, 45.01s/it]
+
+Results:
+  Number of sequences: 20
+  Mean Loss: 0.8479
+  Mean Accuracy: 0.5377
+  Median Accuracy: 0.5367
+  Mean Perplexity (Rives): 1.8004
+  Median Perplexity (Rives): 1.7976
+
+================================================================================
+Testing: lam_nt_sparse=0.70, lam_nt_dense=0.20, cnt_thresh=7
+================================================================================
+Evaluating sequences:   0%|          | 0/20 [00:00<?, ?it/s]Evaluating sequences:   5%|▌         | 1/20 [00:44<14:13, 44.91s/it]Evaluating sequences:  10%|█         | 2/20 [01:29<13:28, 44.90s/it]Evaluating sequences:  15%|█▌        | 3/20 [02:14<12:43, 44.90s/it]Evaluating sequences:  20%|██        | 4/20 [02:59<11:58, 44.90s/it]Evaluating sequences:  25%|██▌       | 5/20 [03:44<11:13, 44.89s/it]Evaluating sequences:  30%|███       | 6/20 [04:29<10:28, 44.86s/it]Evaluating sequences:  35%|███▌      | 7/20 [05:14<09:42, 44.82s/it]Evaluating sequences:  40%|████      | 8/20 [05:58<08:57, 44.79s/it]Evaluating sequences:  45%|████▌     | 9/20 [06:43<08:12, 44.76s/it]Evaluating sequences:  50%|█████     | 10/20 [07:28<07:27, 44.74s/it]Evaluating sequences:  55%|█████▌    | 11/20 [08:12<06:42, 44.72s/it]Evaluating sequences:  60%|██████    | 12/20 [08:57<05:57, 44.71s/it]Evaluating sequences:  65%|██████▌   | 13/20 [09:42<05:13, 44.83s/it]Evaluating sequences:  70%|███████   | 14/20 [10:27<04:28, 44.78s/it]Evaluating sequences:  75%|███████▌  | 15/20 [11:11<03:43, 44.75s/it]Evaluating sequences:  80%|████████  | 16/20 [11:56<02:58, 44.72s/it]Evaluating sequences:  85%|████████▌ | 17/20 [12:41<02:14, 44.71s/it]Evaluating sequences:  90%|█████████ | 18/20 [13:25<01:29, 44.69s/it]Evaluating sequences:  95%|█████████▌| 19/20 [14:10<00:44, 44.68s/it]Evaluating sequences: 100%|██████████| 20/20 [14:55<00:00, 44.68s/it]Evaluating sequences: 100%|██████████| 20/20 [14:55<00:00, 44.76s/it]
+
+Results:
+  Number of sequences: 20
+  Mean Loss: 0.8479
+  Mean Accuracy: 0.5377
+  Median Accuracy: 0.5367
+  Mean Perplexity (Rives): 1.8004
+  Median Perplexity (Rives): 1.7976
+
+================================================================================
+Testing: lam_nt_sparse=0.70, lam_nt_dense=0.50, cnt_thresh=2
+================================================================================
+Evaluating sequences:   0%|          | 0/20 [00:00<?, ?it/s]Evaluating sequences:   5%|▌         | 1/20 [00:44<14:09, 44.70s/it]Evaluating sequences:  10%|█         | 2/20 [01:29<13:24, 44.68s/it]Evaluating sequences:  15%|█▌        | 3/20 [02:14<12:39, 44.67s/it]Evaluating sequences:  20%|██        | 4/20 [02:58<11:54, 44.67s/it]Evaluating sequences:  25%|██▌       | 5/20 [03:43<11:10, 44.67s/it]Evaluating sequences:  30%|███       | 6/20 [04:28<10:25, 44.66s/it]Evaluating sequences:  35%|███▌      | 7/20 [05:12<09:40, 44.66s/it]Evaluating sequences:  40%|████      | 8/20 [05:57<08:55, 44.66s/it]Evaluating sequences:  45%|████▌     | 9/20 [06:42<08:11, 44.67s/it]Evaluating sequences:  50%|█████     | 10/20 [07:26<07:26, 44.66s/it]Evaluating sequences:  55%|█████▌    | 11/20 [08:11<06:41, 44.67s/it]Evaluating sequences:  60%|██████    | 12/20 [08:56<05:57, 44.67s/it]Evaluating sequences:  65%|██████▌   | 13/20 [09:40<05:12, 44.67s/it]Evaluating sequences:  70%|███████   | 14/20 [10:26<04:30, 45.13s/it]Evaluating sequences:  75%|███████▌  | 15/20 [11:11<03:44, 44.99s/it]Evaluating sequences:  80%|████████  | 16/20 [11:56<02:59, 44.88s/it]Evaluating sequences:  85%|████████▌ | 17/20 [12:40<02:14, 44.82s/it]Evaluating sequences:  90%|█████████ | 18/20 [13:25<01:29, 44.77s/it]Evaluating sequences:  95%|█████████▌| 19/20 [14:10<00:44, 44.73s/it]Evaluating sequences: 100%|██████████| 20/20 [14:54<00:00, 44.72s/it]Evaluating sequences: 100%|██████████| 20/20 [14:54<00:00, 44.74s/it]
+
+Results:
+  Number of sequences: 20
+  Mean Loss: 0.4463
+  Mean Accuracy: 0.5707
+  Median Accuracy: 0.5733
+  Mean Perplexity (Rives): 1.3627
+  Median Perplexity (Rives): 1.3586
+
+================================================================================
+Testing: lam_nt_sparse=0.70, lam_nt_dense=0.50, cnt_thresh=7
+================================================================================
+Evaluating sequences:   0%|          | 0/20 [00:00<?, ?it/s]Evaluating sequences:   5%|▌         | 1/20 [00:44<14:09, 44.72s/it]Evaluating sequences:  10%|█         | 2/20 [01:29<13:28, 44.93s/it]Evaluating sequences:  15%|█▌        | 3/20 [02:14<12:41, 44.80s/it]Evaluating sequences:  20%|██        | 4/20 [02:59<11:55, 44.75s/it]Evaluating sequences:  25%|██▌       | 5/20 [03:43<11:10, 44.71s/it]Evaluating sequences:  30%|███       | 6/20 [04:28<10:25, 44.70s/it]Evaluating sequences:  35%|███▌      | 7/20 [05:13<09:40, 44.68s/it]Evaluating sequences:  40%|████      | 8/20 [05:57<08:56, 44.67s/it]Evaluating sequences:  45%|████▌     | 9/20 [06:42<08:11, 44.67s/it]Evaluating sequences:  50%|█████     | 10/20 [07:27<07:26, 44.66s/it]Evaluating sequences:  55%|█████▌    | 11/20 [08:11<06:41, 44.66s/it]Evaluating sequences:  60%|██████    | 12/20 [08:56<05:57, 44.66s/it]Evaluating sequences:  65%|██████▌   | 13/20 [09:41<05:12, 44.66s/it]Evaluating sequences:  70%|███████   | 14/20 [10:25<04:27, 44.65s/it]Evaluating sequences:  75%|███████▌  | 15/20 [11:10<03:43, 44.66s/it]Evaluating sequences:  80%|████████  | 16/20 [11:54<02:58, 44.65s/it]Evaluating sequences:  85%|████████▌ | 17/20 [12:39<02:13, 44.65s/it]Evaluating sequences:  90%|█████████ | 18/20 [13:24<01:29, 44.65s/it]Evaluating sequences:  95%|█████████▌| 19/20 [14:08<00:44, 44.65s/it]Evaluating sequences: 100%|██████████| 20/20 [14:53<00:00, 44.65s/it]Evaluating sequences: 100%|██████████| 20/20 [14:53<00:00, 44.68s/it]
+
+Results:
+  Number of sequences: 20
+  Mean Loss: 0.4463
+  Mean Accuracy: 0.5707
+  Median Accuracy: 0.5733
+  Mean Perplexity (Rives): 1.3627
+  Median Perplexity (Rives): 1.3586
+
+================================================================================
+Testing: lam_nt_sparse=0.80, lam_nt_dense=0.20, cnt_thresh=2
+================================================================================
+Evaluating sequences:   0%|          | 0/20 [00:00<?, ?it/s]Evaluating sequences:   5%|▌         | 1/20 [00:44<14:09, 44.70s/it]Evaluating sequences:  10%|█         | 2/20 [01:29<13:23, 44.67s/it]Evaluating sequences:  15%|█▌        | 3/20 [02:13<12:39, 44.65s/it]Evaluating sequences:  20%|██        | 4/20 [02:58<11:54, 44.65s/it]Evaluating sequences:  25%|██▌       | 5/20 [03:43<11:09, 44.65s/it]Evaluating sequences:  30%|███       | 6/20 [04:27<10:25, 44.65s/it]Evaluating sequences:  35%|███▌      | 7/20 [05:20<10:15, 47.33s/it]Evaluating sequences:  40%|████      | 8/20 [06:06<09:22, 46.83s/it]Evaluating sequences:  45%|████▌     | 9/20 [06:51<08:27, 46.14s/it]Evaluating sequences:  50%|█████     | 10/20 [07:35<07:36, 45.67s/it]Evaluating sequences:  55%|█████▌    | 11/20 [08:20<06:48, 45.35s/it]Evaluating sequences:  60%|██████    | 12/20 [09:05<06:01, 45.14s/it]Evaluating sequences:  65%|██████▌   | 13/20 [09:49<05:14, 44.98s/it]Evaluating sequences:  70%|███████   | 14/20 [10:34<04:29, 44.87s/it]Evaluating sequences:  75%|███████▌  | 15/20 [11:18<03:43, 44.80s/it]Evaluating sequences:  80%|████████  | 16/20 [12:03<02:58, 44.75s/it]Evaluating sequences:  85%|████████▌ | 17/20 [12:48<02:14, 44.71s/it]Evaluating sequences:  90%|█████████ | 18/20 [13:32<01:29, 44.69s/it]Evaluating sequences:  95%|█████████▌| 19/20 [14:17<00:44, 44.67s/it]Evaluating sequences: 100%|██████████| 20/20 [15:02<00:00, 44.66s/it]Evaluating sequences: 100%|██████████| 20/20 [15:02<00:00, 45.10s/it]
+
+Results:
+  Number of sequences: 20
+  Mean Loss: 0.8479
+  Mean Accuracy: 0.5377
+  Median Accuracy: 0.5367
+  Mean Perplexity (Rives): 1.8004
+  Median Perplexity (Rives): 1.7976
+
+================================================================================
+Testing: lam_nt_sparse=0.80, lam_nt_dense=0.20, cnt_thresh=7
+================================================================================
+Evaluating sequences:   0%|          | 0/20 [00:00<?, ?it/s]Evaluating sequences:   5%|▌         | 1/20 [00:44<14:07, 44.60s/it]Evaluating sequences:  10%|█         | 2/20 [01:29<13:22, 44.58s/it]Evaluating sequences:  15%|█▌        | 3/20 [02:13<12:37, 44.59s/it]Evaluating sequences:  20%|██        | 4/20 [02:58<11:53, 44.60s/it]Evaluating sequences:  25%|██▌       | 5/20 [03:43<11:09, 44.61s/it]Evaluating sequences:  30%|███       | 6/20 [04:27<10:26, 44.73s/it]Evaluating sequences:  35%|███▌      | 7/20 [05:12<09:41, 44.76s/it]Evaluating sequences:  40%|████      | 8/20 [05:57<08:56, 44.73s/it]Evaluating sequences:  45%|████▌     | 9/20 [06:42<08:11, 44.71s/it]Evaluating sequences:  50%|█████     | 10/20 [07:26<07:26, 44.69s/it]Evaluating sequences:  55%|█████▌    | 11/20 [08:11<06:42, 44.68s/it]Evaluating sequences:  60%|██████    | 12/20 [08:56<05:57, 44.69s/it]Evaluating sequences:  65%|██████▌   | 13/20 [09:40<05:12, 44.71s/it]Evaluating sequences:  70%|███████   | 14/20 [10:25<04:28, 44.70s/it]Evaluating sequences:  75%|███████▌  | 15/20 [11:10<03:43, 44.70s/it]Evaluating sequences:  80%|████████  | 16/20 [11:55<02:58, 44.71s/it]Evaluating sequences:  85%|████████▌ | 17/20 [12:39<02:14, 44.75s/it]Evaluating sequences:  90%|█████████ | 18/20 [13:24<01:29, 44.73s/it]Evaluating sequences:  95%|█████████▌| 19/20 [14:09<00:44, 44.73s/it]Evaluating sequences: 100%|██████████| 20/20 [14:54<00:00, 44.82s/it]Evaluating sequences: 100%|██████████| 20/20 [14:54<00:00, 44.72s/it]
+
+Results:
+  Number of sequences: 20
+  Mean Loss: 0.8479
+  Mean Accuracy: 0.5377
+  Median Accuracy: 0.5367
+  Mean Perplexity (Rives): 1.8004
+  Median Perplexity (Rives): 1.7976
+
+================================================================================
+Testing: lam_nt_sparse=0.80, lam_nt_dense=0.50, cnt_thresh=2
+================================================================================
+Evaluating sequences:   0%|          | 0/20 [00:00<?, ?it/s]Evaluating sequences:   5%|▌         | 1/20 [00:44<14:10, 44.79s/it]Evaluating sequences:  10%|█         | 2/20 [01:29<13:23, 44.66s/it]Evaluating sequences:  15%|█▌        | 3/20 [02:13<12:38, 44.63s/it]Evaluating sequences:  20%|██        | 4/20 [02:58<11:53, 44.62s/it]Evaluating sequences:  25%|██▌       | 5/20 [03:43<11:09, 44.61s/it]Evaluating sequences:  30%|███       | 6/20 [04:27<10:24, 44.61s/it]Evaluating sequences:  35%|███▌      | 7/20 [05:12<09:40, 44.62s/it]Evaluating sequences:  40%|████      | 8/20 [05:57<08:55, 44.62s/it]Evaluating sequences:  45%|████▌     | 9/20 [06:41<08:10, 44.62s/it]Evaluating sequences:  50%|█████     | 10/20 [07:26<07:26, 44.63s/it]Evaluating sequences:  55%|█████▌    | 11/20 [08:10<06:41, 44.63s/it]Evaluating sequences:  60%|██████    | 12/20 [08:55<05:57, 44.63s/it]Evaluating sequences:  65%|██████▌   | 13/20 [09:40<05:12, 44.64s/it]Evaluating sequences:  70%|███████   | 14/20 [10:24<04:27, 44.64s/it]Evaluating sequences:  75%|███████▌  | 15/20 [11:09<03:43, 44.64s/it]Evaluating sequences:  80%|████████  | 16/20 [11:54<02:58, 44.64s/it]Evaluating sequences:  85%|████████▌ | 17/20 [12:38<02:13, 44.64s/it]Evaluating sequences:  90%|█████████ | 18/20 [13:23<01:29, 44.63s/it]Evaluating sequences:  95%|█████████▌| 19/20 [14:08<00:44, 44.64s/it]Evaluating sequences: 100%|██████████| 20/20 [14:52<00:00, 44.63s/it]Evaluating sequences: 100%|██████████| 20/20 [14:52<00:00, 44.63s/it]
+
+Results:
+  Number of sequences: 20
+  Mean Loss: 0.4463
+  Mean Accuracy: 0.5707
+  Median Accuracy: 0.5733
+  Mean Perplexity (Rives): 1.3627
+  Median Perplexity (Rives): 1.3586
+
+================================================================================
+Testing: lam_nt_sparse=0.80, lam_nt_dense=0.50, cnt_thresh=7
+================================================================================
+Evaluating sequences:   0%|          | 0/20 [00:00<?, ?it/s]Evaluating sequences:   5%|▌         | 1/20 [00:44<14:09, 44.70s/it]Evaluating sequences:  10%|█         | 2/20 [01:29<13:24, 44.67s/it]Evaluating sequences:  15%|█▌        | 3/20 [02:13<12:39, 44.65s/it]Evaluating sequences:  20%|██        | 4/20 [02:58<11:54, 44.65s/it]Evaluating sequences:  25%|██▌       | 5/20 [03:43<11:09, 44.65s/it]Evaluating sequences:  30%|███       | 6/20 [04:27<10:25, 44.65s/it]Evaluating sequences:  35%|███▌      | 7/20 [05:12<09:40, 44.65s/it]Evaluating sequences:  40%|████      | 8/20 [05:57<08:58, 44.85s/it]Evaluating sequences:  45%|████▌     | 9/20 [06:43<08:15, 45.03s/it]Evaluating sequences:  50%|█████     | 10/20 [07:27<07:29, 44.91s/it]Evaluating sequences:  55%|█████▌    | 11/20 [08:12<06:43, 44.84s/it]Evaluating sequences:  60%|██████    | 12/20 [08:57<05:58, 44.78s/it]Evaluating sequences:  65%|██████▌   | 13/20 [09:41<05:13, 44.74s/it]Evaluating sequences:  70%|███████   | 14/20 [10:26<04:28, 44.73s/it]Evaluating sequences:  75%|███████▌  | 15/20 [11:11<03:43, 44.70s/it]Evaluating sequences:  80%|████████  | 16/20 [11:55<02:58, 44.68s/it]Evaluating sequences:  85%|████████▌ | 17/20 [12:40<02:14, 44.69s/it]Evaluating sequences:  90%|█████████ | 18/20 [13:25<01:29, 44.67s/it]Evaluating sequences:  95%|█████████▌| 19/20 [14:09<00:44, 44.66s/it]Evaluating sequences: 100%|██████████| 20/20 [14:54<00:00, 44.69s/it]Evaluating sequences: 100%|██████████| 20/20 [14:54<00:00, 44.73s/it]
+
+Results:
+  Number of sequences: 20
+  Mean Loss: 0.4463
+  Mean Accuracy: 0.5707
+  Median Accuracy: 0.5733
+  Mean Perplexity (Rives): 1.3627
+  Median Perplexity (Rives): 1.3586
+
+================================================================================
+LAMBDA TUNING COMPLETE
+================================================================================
+
+Best configuration by MEDIAN ACCURACY:
+  lam_nt_sparse=0.70, lam_nt_dense=0.50, cnt_thresh=2
+  Median Accuracy: 0.5733
+  Mean Perplexity: 1.3627
+
+Best configuration by MEAN PERPLEXITY:
+  lam_nt_sparse=0.70, lam_nt_dense=0.50, cnt_thresh=2
+  Median Accuracy: 0.5733
+  Mean Perplexity: 1.3627
+
+All results saved to: h_tuning_results
+Summary saved to: h_tuning_results/lambda_tuning_summary.json
